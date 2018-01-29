@@ -1,12 +1,21 @@
-## Set up a service with Kotlin and Spring Boot 2 and Junit 5
+## Kotlin is all about readability and business functionality
 
-- _Goal 1_ is very little effort to set up a service with back - and front-end in Kotlin
-- _Goal 2_ implement business rules with very little effort
+- _Goal 1_ implement business rules with very little effort
+
+--> data class
+--> constructors
+--> extension function
+--> string concatanation
+
+--> until method in loop
+
+Extra's: Integration with Spring Boot 2
+
+On a critical note:
+The companion objects
 
 
 _Warning : Why use experimental incremental version?_
-
-
 
 ### Lessons learned:
 _@SpringBootApplication_ doet een _@ComponentScan_ De package van de klasse waar de annotatie
