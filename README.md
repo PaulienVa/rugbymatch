@@ -2,12 +2,23 @@
 
 - _Goal 1_ implement business rules with very little effort
 
---> data class
+--> data class - class in one line -- say what?!
 --> constructors
 --> extension function
 --> string concatanation
+--> "return if else " construction
 
 --> until method in loop
+
+
+Ex 1: Discover all these cool features by writing the kick off all along
+
+--> Compare with Java code at the end
+
+Ex 2: explain Line-Out and let them write
+
+
+
 
 Extra's: Integration with Spring Boot 2
 
