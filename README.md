@@ -14,8 +14,14 @@
 Ex 1: Discover all these cool features by writing the kick off all along
 
 --> Compare with Java code at the end
+--> copy-paste java code
 
 Ex 2: explain Line-Out and let them write
+
+
+
+Ex 3: Kotin in a Spring application:
+lateinit keyword
 
 
 
