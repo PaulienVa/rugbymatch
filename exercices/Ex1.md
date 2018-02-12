@@ -8,7 +8,6 @@ For more [Kotlin information](https://kotlinlang.org/docs/reference/)
 Kotlin loves immutability, in that regard we will aim to respect that feature
 
 ### 1. (Data) classes
-
 ### 1.1 Special feature in IntelliJ
 Copy/paste the Java code from the [Player Class](./../src/main/java/com/paulienvanalst/rugbymatch/team/Player.java) into 
 the Kotlin file [Player.kt](./../src/main/kotlin/com/paulienvanalst/rugbymatch/players/Player.kt)

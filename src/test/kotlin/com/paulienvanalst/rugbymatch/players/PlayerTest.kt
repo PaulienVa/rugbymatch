@@ -1,17 +1,17 @@
 package com.paulienvanalst.rugbymatch.players
 
+import com.paulienvanalst.rugbymatch.oldfashioned.Player
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.notNullValue
 import org.junit.jupiter.api.Test
 
 class PlayerTest {
-    val awesomeTeam = "OpenValue"
-    val firstRow = 1
-    val player = Player(awesomeTeam, firstRow)
+    private val awesomeTeam = "OpenValue"
+    private val firstRow = 1
+    private val player = Player(awesomeTeam, firstRow)
 
-    val displayedPlayer = "Player{team='$awesomeTeam', position=$firstRow}"
-
+    private val displayedPlayer = "Player{team='$awesomeTeam', position=$firstRow}"
 
     @Test
     fun `A player can be made`() {

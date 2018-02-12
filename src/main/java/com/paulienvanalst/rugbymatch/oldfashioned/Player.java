@@ -1,5 +1,7 @@
 package com.paulienvanalst.rugbymatch.oldfashioned;
 
+import com.google.common.base.MoreObjects;
+
 import java.util.Objects;
 
 public class Player {
@@ -19,7 +21,6 @@ public class Player {
     public int getPosition() {
         return position;
     }
-
 
     @Override
     public String toString() {
