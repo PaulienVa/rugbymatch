@@ -1,7 +1,7 @@
 ## Kotlin is all about readability and business functionality
 
-- _Goal 1_ implement business rules with very little effort
-
+### Ex 1: Discover all these cool features by writing the kick off all along
+Exercise 1 can be found [here](./exercices/Ex1.md)
 --> data class - class in one line -- say what?!
 --> constructors
 --> extension function
@@ -9,10 +9,6 @@
 --> "return if else " construction
 
 --> until method in loop
-
-
-Ex 1: Discover all these cool features by writing the kick off all along
-
 --> Compare with Java code at the end
 --> copy-paste java code
 
