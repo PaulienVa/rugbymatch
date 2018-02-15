@@ -7,7 +7,7 @@ For more [Kotlin information](https://kotlinlang.org/docs/reference/)
 ## First steps into Kotlin
 Kotlin loves immutability, in that regard we will aim to respect that feature
 
-#1. (Data) classes
+1. (Data) classes
 ==================
 
 1.1.1 Special feature in IntelliJ
