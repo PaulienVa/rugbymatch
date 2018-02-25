@@ -1,6 +1,5 @@
 package com.paulienvanalst.rugbymatch.players
 
-import com.paulienvanalst.rugbymatch.oldfashioned.Player
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.notNullValue
@@ -13,7 +12,7 @@ class PlayerTest {
     private val firstRow = 1
     private val player = Player(awesomeTeam, firstRow)
 
-    private val displayedPlayer = "Player{team='$awesomeTeam', position=$firstRow}"
+    private val displayedPlayer = "Player(team=$awesomeTeam, position=$firstRow)"
 
     @Test
     fun `A player can be made`() {
@@ -43,19 +42,19 @@ class PlayerTest {
         assertThat(player.hashCode(), `is`(otherPlayer.hashCode()))
     }
 
-//    @ParameterizedTest
-//    @ValueSource(ints = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
-//    fun `A player with position is part of the starting squad` (position: Int) {
-//        val playerWithPosition = Player(awesomeTeam, position)
-//        assertThat("Player with $position should be part of starting squad", playerWithPosition.isStarting, `is`(true))
-//    }
-//
-//    @ParameterizedTest
-//    @ValueSource(ints = [16, 17, 18, 19, 20, 21, 22])
-//    fun `A player with position is not part of the starting squad` (position: Int) {
-//        val playerWithPosition = Player(awesomeTeam, position)
-//        assertThat("Player with $position should not be part of starting squad", playerWithPosition.isStarting, `is`(false))
-//    }
+    @ParameterizedTest
+    @ValueSource(ints = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+    fun `A player with position is part of the starting squad` (position: Int) {
+        val playerWithPosition = Player(awesomeTeam, position)
+        assertThat("Player with $position should be part of starting squad", playerWithPosition.isStarting, `is`(true))
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = [16, 17, 18, 19, 20, 21, 22])
+    fun `A player with position is not part of the starting squad` (position: Int) {
+        val playerWithPosition = Player(awesomeTeam, position)
+        assertThat("Player with $position should not be part of starting squad", playerWithPosition.isStarting, `is`(false))
+    }
 
 
 }
