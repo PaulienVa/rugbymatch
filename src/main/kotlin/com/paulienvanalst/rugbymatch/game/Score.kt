@@ -1,30 +1,8 @@
 package com.paulienvanalst.rugbymatch.game
 
-import com.paulienvanalst.rugbymatch.Team
 import com.paulienvanalst.rugbymatch.TeamName
-import com.paulienvanalst.rugbymatch.events.ScoringEvent
-import org.springframework.context.event.EventListener
-import org.springframework.stereotype.Component
-import java.math.BigDecimal
-import java.math.BigInteger
 
-@Component
-class ScoringBoard {
-    lateinit var scoreHostingTeam : Score
-    lateinit var scoreVisitingTeam : Score
-
-    @EventListener(condition = "#scoringEvent")
-    fun teamHasScored(scoringEvent: ScoringEvent) {
-        val incomingScore = scoringEvent.score
-        if (incomingScore.forTeam == scoreHostingTeam.forTeam) {
-            scoreHostingTeam += incomingScore
-        }
-
-    }
-
-}
-
-open class Score(val forTeam: TeamName, val points: Int) {
+open class Score(val forTeam: TeamName, private val points: Int) {
     operator fun plus(other: Score) : Score{
         if (this.forTeam != other.forTeam) {
             throw InvalidScoreException(other)
@@ -36,7 +14,15 @@ open class Score(val forTeam: TeamName, val points: Int) {
         val scoreOfOther = other as Score
         return this.forTeam == scoreOfOther.forTeam && this.points == scoreOfOther.points
     }
+
+    override fun hashCode(): Int {
+        var result = forTeam.hashCode()
+        result = 31 * result + points
+        return result
+    }
 }
+
+fun List<Score>.getTries() : Int = this.count { score -> score is Try }
 
 class Penalty(forTeam: TeamName) : Score(forTeam, 3)
 class DropGoal(forTeam: TeamName) : Score(forTeam, 3)

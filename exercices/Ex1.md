@@ -10,7 +10,7 @@ Kotlin loves immutability, in that regard we will aim to respect that feature
 #1. (Data) classes
 ==================
 
-# 2. Collections
+# 2. Collections, operator overload and operators (Elvis ?.  )
 ===================
 
 

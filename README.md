@@ -34,3 +34,28 @@ _Warning : Why use experimental incremental version?_
 _@SpringBootApplication_ doet een _@ComponentScan_ De package van de klasse waar de annotatie
 op gedefinieerd is, is cruciaal. 
 Zie: https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-structuring-your-code.html
+
+
+
+
+
+
+--------------------------------------------------------------------
+
+
+
+
+
+--------------------------------------------------------------------
+
+
+
+
+
+--------------------------------------------------------------------
+
+
+
+
+
+--------------------------------------------------------------------
