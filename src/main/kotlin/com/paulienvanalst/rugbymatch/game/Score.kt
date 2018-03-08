@@ -2,7 +2,7 @@ package com.paulienvanalst.rugbymatch.game
 
 import com.paulienvanalst.rugbymatch.TeamName
 
-open class Score(val forTeam: TeamName, private val points: Int) {
+open class Score(val forTeam: TeamName, val points: Int) {
     operator fun plus(other: Score) : Score{
         if (this.forTeam != other.forTeam) {
             throw InvalidScoreException(other)
@@ -23,6 +23,13 @@ open class Score(val forTeam: TeamName, private val points: Int) {
 }
 
 fun List<Score>.getTries() : Int = this.count { score -> score is Try }
+
+private fun List<Score>.getTotalScoreOf(teamName: TeamName) : Int = this.filter { it.forTeam == teamName }.map { it.points }.sum()
+
+fun List<Score>.getGameScore(hostingTeam: TeamName, visitingTeam : TeamName) : Map<TeamName, Int> =  hashMapOf(
+        hostingTeam to this.getTotalScoreOf(hostingTeam),
+        visitingTeam to this.getTotalScoreOf(visitingTeam)
+)
 
 class Penalty(forTeam: TeamName) : Score(forTeam, 3)
 class DropGoal(forTeam: TeamName) : Score(forTeam, 3)
