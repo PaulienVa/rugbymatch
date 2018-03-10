@@ -1,6 +1,7 @@
 package com.paulienvanalst.rugbymatch.game
 
 import com.paulienvanalst.rugbymatch.TeamName
+import com.paulienvanalst.rugbymatch.events.StartGame
 import com.paulienvanalst.rugbymatch.events.TryIsScored
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired

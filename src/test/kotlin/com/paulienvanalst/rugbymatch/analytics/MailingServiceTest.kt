@@ -2,7 +2,7 @@ package com.paulienvanalst.rugbymatch.analytics
 
 import com.paulienvanalst.rugbymatch.Application
 import com.paulienvanalst.rugbymatch.TeamName
-import com.paulienvanalst.rugbymatch.game.StartGame
+import com.paulienvanalst.rugbymatch.events.StartGame
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.junit.MatcherAssert.assertThat
 import org.junit.jupiter.api.Test

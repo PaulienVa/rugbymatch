@@ -2,6 +2,8 @@ package com.paulienvanalst.rugbymatch.oldfashioned;
 
 import java.util.Objects;
 
+// -- Ex 1
+
 public class Player {
 
     private final String team;

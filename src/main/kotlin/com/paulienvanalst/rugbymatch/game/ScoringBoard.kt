@@ -2,15 +2,16 @@ package com.paulienvanalst.rugbymatch.game
 
 import com.paulienvanalst.rugbymatch.TeamName
 import com.paulienvanalst.rugbymatch.events.ScoringEvent
+import com.paulienvanalst.rugbymatch.events.StartGame
 import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
 
 @Component
+//Ex 3
 class ScoringBoard {
     private lateinit var hostingTeam : TeamName
     private lateinit var visitingTeam : TeamName
 
-    //todo move to repo
     private var scoringHistory : List<Score> = emptyList()
 
     @EventListener
@@ -21,14 +22,7 @@ class ScoringBoard {
 
     @EventListener
     fun teamHasScored(scoringEvent: ScoringEvent) {
-
-        //todo fix this
-        if(hostingTeam == null || visitingTeam == null) {
-            throw TheGameWasNotStartedException()
-        }
-
         scoringHistory += Score(scoringEvent.team, scoringEvent.type)
-
     }
 
     fun currentScore() : GameScore  {
