@@ -1,61 +1,13 @@
 ## Kotlin is all about readability and business functionality
+In this workshop you will write a small analytics application for rugby games.
 
-### Ex 1: Discover all these cool features by writing the kick off all along
-Exercise 1 can be found [here](./exercices/Ex1.md)
---> data class - class in one line -- say what?!
---> constructors
---> extension function
---> string concatanation
---> "return if else " construction
+All the exercises can be done independently from each other and can be done by checking out the correct branch:
+`git checkout "EX[number_of_exercise]"`
 
---> until method in loop
---> Compare with Java code at the end
---> copy-paste java code
+All the exercises can be found here:
 
-Ex 2: explain Line-Out and let them write
+Exercise 1 ([here](./exercices/Ex1.md)) will give you all the insights in (data) classes, collections and types
 
+Exercise 2 ([here](./exercices/Ex2.md)) will give you all the insights in inheritance, operator overload and extension functions
 
-
-Ex 3: Kotin in a Spring application:
-lateinit keyword
-
-
-
-
-Extra's: Integration with Spring Boot 2
-
-On a critical note:
-The companion objects
-
-
-_Warning : Why use experimental incremental version?_
-
-### Lessons learned:
-_@SpringBootApplication_ doet een _@ComponentScan_ De package van de klasse waar de annotatie
-op gedefinieerd is, is cruciaal. 
-Zie: https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-structuring-your-code.html
-
-
-
-
-
-
---------------------------------------------------------------------
-
-
-
-
-
---------------------------------------------------------------------
-
-
-
-
-
---------------------------------------------------------------------
-
-
-
-
-
---------------------------------------------------------------------
+Exercise 3 ([here](./exercices/Ex3.md)) will give you all the insights about how to integrate Kotlin with Spring and Hibernate
