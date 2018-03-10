@@ -2,10 +2,10 @@ package com.paulienvanalst.rugbymatch.analytics
 
 import com.paulienvanalst.rugbymatch.TeamName
 import com.paulienvanalst.rugbymatch.events.LineOutWasPlayed
-import com.paulienvanalst.rugbymatch.events.ScoringEvent
 import com.paulienvanalst.rugbymatch.events.ScrumWasPlayed
 import com.paulienvanalst.rugbymatch.events.SetPieceEvent
 import com.paulienvanalst.rugbymatch.game.*
+import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationEvent
 import org.springframework.context.ApplicationEventPublisher
@@ -14,34 +14,34 @@ import org.springframework.stereotype.Component
 
 @Component
 class GameReporter {
+    private val LOG = LogManager.getLogger(GameReporter::class.java)
 
     @Autowired
-    lateinit var eventPublisher: ApplicationEventPublisher
+    private lateinit var scoringBoard: ScoringBoard
 
-    lateinit var gameReport : GameReport
+    @Autowired
+    private lateinit var eventPublisher: ApplicationEventPublisher
 
-    @EventListener(condition ="#gameIsStarted")
-    fun startTheReport(gameIsStarted: GameIsStarted) {
-        gameReport = GameReport(gameIsStarted.hostingTeam, gameIsStarted.visitingTeam)
+    private lateinit var gameReport : GameReport
+
+    @EventListener
+    fun startTheReport(startGame: StartGame) {
+        LOG.info("start the game ${startGame.hostingTeam} vs ${startGame.visitingTeam}")
+        gameReport = GameReport(startGame.hostingTeam, startGame.visitingTeam)
     }
 
-    @EventListener(condition = "#halfTime")
+    @EventListener
     fun halfTime(halfTime: HalfTime) {
-        gameReport.determineHalfTimeScore()
+        gameReport.setHalfTimeScore(scoringBoard.currentScore())
     }
 
-    @EventListener(condition = "#gameIsFinished")
-    fun endGame(gameIsFinished: GameIsFinished) {
-        gameReport.determineFinalScore()
+    @EventListener
+    fun endGame(finishGame: FinishGame) {
+        gameReport.setFinalScore(scoringBoard.currentScore())
+        eventPublisher.publishEvent(GenerateGameReport(this, this.gameReport))
     }
 
-    @EventListener(condition = "#scoringEvent")
-    fun updatingReportAfterScoringEvent(scoringEvent: ScoringEvent) {
-        gameReport.addNewScore(scoringEvent.score)
-        eventPublisher.publishEvent(GameReportIsGenerated(this, this.gameReport))
-    }
-
-    @EventListener(condition = "#setPieceEvent")
+    @EventListener
     fun updatingReportAfterSetPiece(setPieceEvent: SetPieceEvent) {
         if (setPieceEvent is ScrumWasPlayed) {
             this.gameReport.addScrum(setPieceEvent.scrum)
@@ -51,20 +51,15 @@ class GameReporter {
     }
 }
 
-class GameReportIsGenerated (source: Any?, val report : GameReport) : ApplicationEvent(source)
+class GenerateGameReport (source: Any?, val report : GameReport) : ApplicationEvent(source)
 
 class GameReport (val hostingTeam : TeamName, val visitingTeam : TeamName) {
 
-    var scores: List<Score> = emptyList()
-    var lineOuts: List<LineOut> = emptyList()
-    var scrums: List<Scrum> = emptyList()
+    private var lineOuts: List<LineOut> = emptyList()
+    private var scrums: List<Scrum> = emptyList()
 
-    var halfTimeScores : Map<TeamName, Int> = hashMapOf()
-    var endScores : Map<TeamName, Int> = hashMapOf()
-
-    fun addNewScore(score: Score) {
-        this.scores += score
-    }
+    private var halfTimeScores : GameScore = GameScore(hostingTeam to 0, visitingTeam to 0)
+    private var endScores : GameScore = GameScore(hostingTeam to 0, visitingTeam to 0)
 
     fun addScrum(scrum: Scrum) {
         this.scrums += scrum
@@ -74,12 +69,51 @@ class GameReport (val hostingTeam : TeamName, val visitingTeam : TeamName) {
         this.lineOuts += lineOut
     }
 
-    fun determineHalfTimeScore() {
-        this.halfTimeScores = this.scores.getGameScore(this.hostingTeam, this.visitingTeam)
+    fun setHalfTimeScore(gameScore: GameScore) {
+        this.halfTimeScores = gameScore
     }
 
-    fun determineFinalScore() {
-        this.endScores = this.scores.getGameScore(this.hostingTeam, this.visitingTeam)
+    fun setFinalScore(gameScore: GameScore) {
+        this.endScores = gameScore
+    }
+
+    fun format() : String {
+        return """
+            --------------------------------------------------------------------------------
+                        The game ended with the score of ${this.endScores}.
+            --------------------------------------------------------------------------------
+            --------------------------------------------------------------------------------
+             The half-time score was: ${halfTimeScores}
+
+            ********* Line-outs *********
+            We got ${lineOuts.size} line outs.
+
+            ${lineOutReport(hostingTeam)}
+            ${lineOutReport(visitingTeam)}
+
+            ********* Scrums *********
+            We got ${scrums.size} scrums.
+
+            ${scrumReport(hostingTeam)}
+            ${scrumReport(visitingTeam)}
+
+
+
+            """"
+    }
+
+    private fun lineOutReport(teamName: TeamName): String {
+        return """--------- $teamName ---------
+                 $teamName conserved the ball in ${this.lineOuts.conservedBy(teamName).size} line-outs
+                 and lost the ball in ${this.lineOuts.possessionLostBy(teamName).size} line-outs
+                 """
+    }
+
+    private fun scrumReport(teamName: TeamName): String {
+        return """--------- $teamName ---------
+                 $teamName conserved the ball in ${this.scrums.conservedBy(teamName).size} scrums
+                 and lost the ball in ${this.scrums.possessionLostBy(teamName).size} scrums
+                 """
     }
 
 }

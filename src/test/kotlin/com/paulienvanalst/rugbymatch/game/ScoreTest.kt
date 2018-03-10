@@ -6,7 +6,7 @@ import org.hamcrest.MatcherAssert.assertThat
 import org.junit.jupiter.api.Test
 
 class ScoreTest {
-    val hostingTeam =
+    val hostingTeam = TeamName.RC_TOULON
     val visitingTeam = TeamName.WASPS
 
     @Test
