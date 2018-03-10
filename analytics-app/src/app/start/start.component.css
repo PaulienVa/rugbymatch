@@ -1,0 +1,32 @@
+.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2em;
+}
+
+.start_0 {
+  float: left;
+  text-align: center;
+}
+
+.start_200 {
+  float: left;
+  text-align: center;
+  background-color: #00bc8c;
+  border: none;
+  color: #fff;
+  margin: 2em;
+}
+
+
+.start_500 {
+  float: left;
+  text-align: center;
+  background-color: #e74c3c;
+  border: none;
+  color: #fff;
+  margin: 2em;
+}

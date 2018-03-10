@@ -7,6 +7,7 @@ import com.paulienvanalst.rugbymatch.events.StartGame
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationEventPublisher
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -17,20 +18,21 @@ class GameController {
     @Autowired
     private lateinit var  publisher : ApplicationEventPublisher
 
-
     @GetMapping("/")
+    @CrossOrigin(origins = ["http://localhost:4200"])
     fun home(): String {
         return "Welcome to this awesome workshop!"
     }
 
     @GetMapping("/start-game")
-    fun start(): String {
+    @CrossOrigin(origins = ["http://localhost:4200"])
+    fun start(): Response {
         logger.error("Publishing event!")
         return try {
             publisher.publishEvent(StartGame(this, TeamName.RC_TOULON, TeamName.WASPS))
-            "The Game was started"
+            Response(200, "The Game was started", Teams(TeamName.RC_TOULON, TeamName.WASPS))
         } catch(e: RuntimeException) {
-            "Oops an error occurred ${e.message}"
+            Response(500, "Oops an error occurred ${e.message}", null)
         }
     }
 
@@ -57,3 +59,5 @@ class GameController {
         }
     }
 }
+
+data class Response(val code: Int, val message: String, val body: Any?)
