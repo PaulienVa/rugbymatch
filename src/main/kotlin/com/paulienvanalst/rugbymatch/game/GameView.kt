@@ -1,8 +1,9 @@
 package com.paulienvanalst.rugbymatch.game
 
 import com.paulienvanalst.rugbymatch.TeamName
+import com.paulienvanalst.rugbymatch.events.FinishGame
+import com.paulienvanalst.rugbymatch.events.ScoringEvent
 import com.paulienvanalst.rugbymatch.events.StartGame
-import com.paulienvanalst.rugbymatch.events.TryIsScored
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationEventPublisher
@@ -37,7 +38,7 @@ class GameController {
     fun tryToulon(): String {
         logger.error("Publishing try event!")
         return try {
-            publisher.publishEvent(TryIsScored(this, Try(TeamName.RC_TOULON)))
+            publisher.publishEvent(ScoringEvent(this, Type.TRY, TeamName.RC_TOULON))
             "Toulon scored a try"
         } catch(e: RuntimeException) {
             "Oops an error occurred ${e.message}"
@@ -47,10 +48,9 @@ class GameController {
     @GetMapping("/end-game")
     fun end(): String {
         logger.error("Publishing event!")
-        publisher.publishEvent(TryIsScored(this, Try(TeamName.RC_TOULON)))
 
         return try {
-            publisher.publishEvent(GameIsFinished(this))
+            publisher.publishEvent(FinishGame(this))
             "The Game is finished"
         } catch(e: RuntimeException) {
             "Oops an error occurred ${e.message}"
