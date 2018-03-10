@@ -1,5 +1,7 @@
 package com.paulienvanalst.rugbymatch.oldfashioned;
 
+import com.paulienvanalst.rugbymatch.team.Position;
+
 import java.util.Objects;
 
 // -- Ex 1
@@ -7,9 +9,9 @@ import java.util.Objects;
 public class Player {
 
     private final String team;
-    private final int position;
+    private final Position position;
 
-    public Player(String team, int position) {
+    public Player(String team, Position position) {
         this.team = team;
         this.position = position;
     }
@@ -18,7 +20,7 @@ public class Player {
         return team;
     }
 
-    public int getPosition() {
+    public Position getPosition() {
         return position;
     }
 

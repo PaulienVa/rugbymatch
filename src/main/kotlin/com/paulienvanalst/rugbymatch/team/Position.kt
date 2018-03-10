@@ -1,5 +1,5 @@
 
-package com.paulienvanalst.rugbymatch.players
+package com.paulienvanalst.rugbymatch.team
 
 enum class Position {
     LOOSEHEAD_PROP,
@@ -12,8 +12,10 @@ enum class Position {
     FLY_HALF,
     CENTER,
     WING,
-    FULLBACK,
-    ;
+    FULLBACK;
+
+    fun isFrontRow() : Boolean = this == LOOSEHEAD_PROP || this == TIGHTHEAD_PROP || this == HOOKER
+
 
     companion object {
         fun getForwards() : List<Position> {
