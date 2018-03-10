@@ -16,5 +16,9 @@ data class Team (val players: List<Player>, val name: TeamName) {
 
     fun replacingCaptainBackNumber() : Int = this.scrumHalf?.backNumber ?: players.first { it.isStarting }.backNumber
 
+    fun hasScrum(): Boolean {
+        return players.map { it.position }.containsAll(Position.getForwards())
+    }
+
 }
 

@@ -1,10 +1,4 @@
-# Welcome to Kotlin! 
-
-Kotlin was developed by IntelliJ and has a lot of awesome features. You will discover some of them
-during this workshop. 
-For more [Kotlin information](https://kotlinlang.org/docs/reference/)
-
-## 1. Team and a scoring board
+## 1. Payers in a team
 
 ### a - Special feature in IntelliJ
 

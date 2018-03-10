@@ -41,10 +41,11 @@ class GameReporter {
 
     @EventListener
     fun updatingReportAfterSetPiece(setPieceEvent: SetPieceEvent) {
+        gameReport.addSetPieceEvents(setPieceEvent)
         if (setPieceEvent is ScrumWasPlayed) {
-            this.gameReport.addScrum(setPieceEvent.scrum)
+            this.gameReport.addScrum(setPieceEvent.setPiece as Scrum)
         } else if (setPieceEvent is LineOutWasPlayed) {
-            this.gameReport.addLineOut(setPieceEvent.lineOut)
+            this.gameReport.addLineOut(setPieceEvent.setPiece as LineOut)
         }
     }
 }
@@ -55,10 +56,15 @@ class GameReport (val hostingTeam : TeamName, val visitingTeam : TeamName) {
 
     private var lineOuts: List<LineOut> = emptyList()
     private var scrums: List<Scrum> = emptyList()
+    private var setPieceEvents: List<SetPieceEvent> = emptyList()
 
     private var halfTimeScores : GameScore = GameScore(hostingTeam to 0, visitingTeam to 0)
     private var endScores : GameScore = GameScore(hostingTeam to 0, visitingTeam to 0)
 
+
+    fun addSetPieceEvents(setPieceEvent: SetPieceEvent) {
+        this.setPieceEvents += setPieceEvent
+    }
     fun addScrum(scrum: Scrum) {
         this.scrums += scrum
     }
@@ -102,15 +108,15 @@ class GameReport (val hostingTeam : TeamName, val visitingTeam : TeamName) {
 
     private fun lineOutReport(teamName: TeamName): String {
         return """--------- $teamName ---------
-                 $teamName conserved the ball in ${this.lineOuts.conservedBy(teamName).size} line-outs
-                 and lost the ball in ${this.lineOuts.possessionLostBy(teamName).size} line-outs
+                 $teamName conserved the ball in ${this.setPieceEvents.lineOutEvents().wonBy(teamName).size} line-outs
+                 and lost the ball in ${this.setPieceEvents.lineOutEvents().lostBy(teamName).size} line-outs
                  """
     }
 
     private fun scrumReport(teamName: TeamName): String {
         return """--------- $teamName ---------
-                 $teamName conserved the ball in ${this.scrums.conservedBy(teamName).size} scrums
-                 and lost the ball in ${this.scrums.possessionLostBy(teamName).size} scrums
+                 $teamName conserved the ball in ${this.setPieceEvents.scrumEvents().wonBy(teamName).size} scrums
+                 and lost the ball in ${this.setPieceEvents.scrumEvents().lostBy(teamName).size} scrums
                  """
     }
 
