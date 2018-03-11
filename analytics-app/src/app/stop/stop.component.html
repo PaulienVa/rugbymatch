@@ -1,5 +1,5 @@
 <div class="row">
-  <button *ngIf="this.stateCode !== 200" type="button" class="col-md-3 start btn btn-primary" (click)="this.startGame()" >Start Game</button>
+  <button *ngIf="this.stateCode !== 200" type="button" class="col-md-3 start btn btn-danger" (click)="this.stopGame()" >Stop Game</button>
   <div *ngIf="this.stateCode === 200" class="col-md-3 start_status alert alert-success"> {{this.stateMessage}} </div>
   <div *ngIf="this.stateCode === 500" class="col-md-3 start_status alert alert-danger"> {{this.stateMessage}}</div>
 </div>

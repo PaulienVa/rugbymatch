@@ -48,14 +48,15 @@ class GameController {
     }
 
     @GetMapping("/end-game")
-    fun end(): String {
+    @CrossOrigin(origins = ["http://localhost:4200"])
+    fun end(): Response {
         logger.error("Publishing event!")
 
         return try {
             publisher.publishEvent(FinishGame(this))
-            "The Game is finished"
+            Response(200, "The Game was started", ScoringBoard())
         } catch(e: RuntimeException) {
-            "Oops an error occurred ${e.message}"
+            Response(500, "Oops an error occurred ${e.message}", null)
         }
     }
 }

@@ -1,0 +1,15 @@
+.status_team{
+  text-align: center;
+}
+
+.status_versus{
+  text-align: center;
+  color: orange;
+}
+
+.status {
+  display: flex;
+  flex-direction: row;
+  alignment: center;
+  padding: 2em;
+}

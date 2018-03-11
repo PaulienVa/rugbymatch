@@ -3,12 +3,12 @@ import {GameService} from "../game/game.service";
 import {Teams} from "../game/Teams";
 
 @Component({
-  selector: 'app-start',
-  templateUrl: './start.component.html',
-  styleUrls: ['./start.component.css'],
+  selector: 'app-stop',
+  templateUrl: './stop.component.html',
+  styleUrls: ['./stop.component.css'],
   providers: [GameService]
 })
-export class StartComponent implements OnInit {
+export class StopComponent implements OnInit {
 
   public stateMessage = "";
   public stateCode = 0;
@@ -20,8 +20,8 @@ export class StartComponent implements OnInit {
   ngOnInit() {
   }
 
-  startGame() {
-    this.gameService.startGame().subscribe( answer => {
+  stopGame() {
+    this.gameService.stopGame().subscribe( answer => {
       this.stateMessage = answer.message;
       this.stateCode = answer.code;
       this.teamsForGame.emit(new Teams(answer.body.hostingTeam, answer.body.visitingTeam))

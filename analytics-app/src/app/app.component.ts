@@ -11,7 +11,6 @@ export class AppComponent {
   public teams: Teams;
 
   gameStartedHandler(teams: Teams){
-    console.log('GAME WAS STARTED------  ', teams);
     this.teams = teams;
   }
 }
