@@ -1,6 +1,6 @@
 package com.paulienvanalst.rugbymatch.analytics
 
-import com.paulienvanalst.rugbymatch.TeamName
+import com.paulienvanalst.rugbymatch.team.TeamName
 import com.paulienvanalst.rugbymatch.events.*
 import com.paulienvanalst.rugbymatch.game.*
 import org.apache.logging.log4j.LogManager

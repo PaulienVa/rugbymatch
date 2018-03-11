@@ -1,6 +1,6 @@
 package com.paulienvanalst.rugbymatch.events
 
-import com.paulienvanalst.rugbymatch.TeamName
+import com.paulienvanalst.rugbymatch.team.TeamName
 import org.springframework.context.ApplicationEvent
 
 

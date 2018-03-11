@@ -1,8 +1,8 @@
 package com.paulienvanalst.rugbymatch.game
 
-import com.paulienvanalst.rugbymatch.TeamName
 import com.paulienvanalst.rugbymatch.events.ScoringEvent
 import com.paulienvanalst.rugbymatch.events.StartGame
+import com.paulienvanalst.rugbymatch.team.TeamName
 import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
 

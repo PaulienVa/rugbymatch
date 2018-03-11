@@ -1,6 +1,5 @@
 package com.paulienvanalst.rugbymatch.team
 
-import com.paulienvanalst.rugbymatch.TeamName
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.not
 import org.hamcrest.MatcherAssert.assertThat

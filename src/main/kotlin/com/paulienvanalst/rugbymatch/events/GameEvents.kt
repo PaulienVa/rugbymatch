@@ -1,6 +1,6 @@
 package com.paulienvanalst.rugbymatch.events
 
-import com.paulienvanalst.rugbymatch.TeamName
+import com.paulienvanalst.rugbymatch.team.TeamName
 import com.paulienvanalst.rugbymatch.game.LineOut
 import com.paulienvanalst.rugbymatch.game.Scrum
 import com.paulienvanalst.rugbymatch.game.SetPiece

@@ -1,6 +1,6 @@
 package com.paulienvanalst.rugbymatch.game
 
-import com.paulienvanalst.rugbymatch.TeamName
+import com.paulienvanalst.rugbymatch.team.TeamName
 
 enum class Type(val points: Int) { TRY(5), TRANSFORMED_TRY(7), DROP_GOA(3), PENALTY(3) }
 
