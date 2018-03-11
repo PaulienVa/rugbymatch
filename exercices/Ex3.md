@@ -29,3 +29,16 @@ Another important event for the ScoringBoard is of course the `ScoringEvent`.
 Build an event listener for this event, that will add a score to the scoring list. (Note you can use the operator `+=` as Kotlin allows operator overloading!)
 
 Last but not least, a method is needed to get the current game score at any time wanted. (interface: `fun currentScore(): GameScore`)
+
+### b - Generate a game report
+In file [GameReport.kt](./../src/main/kotlin/com/paulienvanalst/rugbymatch/analytics/GameReport.kt) a lot is already implemented to be able to generate a game report. 
+You only need to implement the method `updatingReportAfterSetPiece()` as this is important to analyze the game.
+This method should add a set piece to the game report using  the method `addSetPieceEvents()`. This method will update the overall list of set pieces but also 
+update the list of scrums and list of lineouts. In order to do this, use `is` of the class check and use `as` to cast.
+
+Now, we should be able to generate a game report at the end of the game. 
+From the front-end events are send to the back-end using some REST endpoints, check [GameView.kt](./../src/main/kotlin/com/paulienvanalst/rugbymatch/game/GameView.kt) to check those endpoints.
+
+You will see that only the try scoring endpoint is not implemented yet. You can implement this one, using the same syntax for the `return` statement as the other endpoints.
+
+### c - let's save the game report

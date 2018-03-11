@@ -16,7 +16,7 @@ class GameController {
     private val logger = LogManager.getLogger(GameController::class.java)
 
     @Autowired
-    private lateinit var  publisher : ApplicationEventPublisher
+    private lateinit var publisher : ApplicationEventPublisher
 
     @GetMapping("/")
     @CrossOrigin(origins = ["http://localhost:4200"])
@@ -27,7 +27,7 @@ class GameController {
     @GetMapping("/start-game")
     @CrossOrigin(origins = ["http://localhost:4200"])
     fun start(): Response {
-        logger.error("Publishing event!")
+        logger.info("Publishing event!")
         return try {
             publisher.publishEvent(StartGame(this, TeamName.RC_TOULON, TeamName.WASPS))
             Response(200, "The Game was started", Teams(TeamName.RC_TOULON, TeamName.WASPS))
@@ -37,8 +37,11 @@ class GameController {
     }
 
     @GetMapping("/try")
+    @CrossOrigin(origins = ["http://localhost:4200"])
     fun tryToulon(): String {
-        logger.error("Publishing try event!")
+        logger.info("Publishing try event!")
+
+        // todo implement in ex 3
         return try {
             publisher.publishEvent(ScoringEvent(this, Type.TRY, TeamName.RC_TOULON))
             "Toulon scored a try"
@@ -50,8 +53,7 @@ class GameController {
     @GetMapping("/end-game")
     @CrossOrigin(origins = ["http://localhost:4200"])
     fun end(): Response {
-        logger.error("Publishing event!")
-
+        logger.info("Publishing event!")
         return try {
             publisher.publishEvent(FinishGame(this))
             Response(200, "The Game was started", ScoringBoard())
