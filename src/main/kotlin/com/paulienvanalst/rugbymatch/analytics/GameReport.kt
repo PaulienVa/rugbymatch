@@ -35,9 +35,9 @@ class GameReporter {
     }
 
     @EventListener
-    fun endGame(finishGame: FinishGame) {
+    fun endGame(finishGame: FinishGame) : GenerateGameReport {
         gameReport.setFinalScore(scoringBoard.currentScore())
-        eventPublisher.publishEvent(GenerateGameReport(this, this.gameReport))
+        return GenerateGameReport(this, this.gameReport)
     }
     // implement this in ex 3
 
@@ -45,8 +45,8 @@ class GameReporter {
     fun updatingReportAfterSetPiece(setPieceEvent: SetPieceEvent) {
         //todo implment this in ex 3
         gameReport.addSetPieceEvents(setPieceEvent)
-
     }
+
 }
 
 class GenerateGameReport (source: Any?, val report : GameReport) : ApplicationEvent(source)

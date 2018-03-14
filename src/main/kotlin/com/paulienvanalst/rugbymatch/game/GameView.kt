@@ -61,6 +61,7 @@ class GameController {
             Response(500, "Oops an error occurred ${e.message}", null)
         }
     }
+
 }
 
 data class Response(val code: Int, val message: String, val body: Any?)
