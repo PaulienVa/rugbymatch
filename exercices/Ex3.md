@@ -19,11 +19,11 @@ In the file [ScoringBoard.kt](./../src/main/kotlin/com/paulienvanalst/rugbymatch
 This scoringboard will have two properties : `hostingTeam` and `visitingTeam` of type `TeamName` who will be initialized once the game is started.
 It will also have a list of Scores which is initialized as an empty list.
 
-
 Now this scoring board should be able to act on several events in the game. In [TimeEvents.kt](./../src/main/kotlin/com/paulienvanalst/rugbymatch/events/TimeEvents.kt) you will find three 
 main events that will influence the game board.
 
-Build an event listener using `org.springframework.context.event.EventListener` that will initialize the `hostingTeam` and the `visitingTeam` with the proper team names..
+Build an event listener using `org.springframework.context.event.EventListener` that will initialize the `hostingTeam` and the `visitingTeam` with the proper team names. 
+(This event will be `StartGame`)
 
 Another important event for the ScoringBoard is of course the `ScoringEvent`. 
 Build an event listener for this event, that will add a score to the scoring list. (Note you can use the operator `+=` as Kotlin allows operator overloading!)
@@ -40,8 +40,3 @@ Now, we should be able to generate a game report at the end of the game.
 From the front-end events are send to the back-end using some REST endpoints, check [GameView.kt](./../src/main/kotlin/com/paulienvanalst/rugbymatch/game/GameView.kt) to check those endpoints.
 
 You will see that only the try scoring endpoint is not implemented yet. You can implement this one, using the same syntax for the `return` statement as the other endpoints.
-
-### c - let's save the game report
-1. Run `docker build .` in the project directory
-2. Run `docker-compose up` in the project directory
-3. Run `mvn flyway:migrate` to get the database configuration
