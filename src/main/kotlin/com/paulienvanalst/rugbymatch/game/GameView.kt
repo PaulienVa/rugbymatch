@@ -42,12 +42,8 @@ class GameController {
         logger.info("Publishing try event!")
 
         // todo implement in ex 3
-        return try {
-            publisher.publishEvent(ScoringEvent(this, Type.TRY, TeamName.RC_TOULON))
-            "Toulon scored a try"
-        } catch(e: RuntimeException) {
-            "Oops an error occurred ${e.message}"
-        }
+//        return
+        return ""
     }
 
     @GetMapping("/end-game")
