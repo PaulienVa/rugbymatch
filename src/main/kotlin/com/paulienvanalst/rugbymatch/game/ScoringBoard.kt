@@ -1,6 +1,5 @@
 package com.paulienvanalst.rugbymatch.game
 
-import com.paulienvanalst.rugbymatch.events.ScoringBoardWasUpdated
 import com.paulienvanalst.rugbymatch.events.ScoringEvent
 import com.paulienvanalst.rugbymatch.events.StartGame
 import com.paulienvanalst.rugbymatch.team.TeamName
