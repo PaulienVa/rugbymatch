@@ -1,40 +1,20 @@
+# Welcome to Kotlin! 
 ## Kotlin is all about readability and business functionality
 
-- _Goal 1_ implement business rules with very little effort
+Kotlin was developed by IntelliJ and has a lot of awesome features. You will discover some of them
+during this workshop. 
+For more information, please refer to: [Kotlin information](https://kotlinlang.org/docs/reference/)
 
---> data class - class in one line -- say what?!
---> constructors
---> extension function
---> string concatanation
---> "return if else " construction
+In this workshop you will write a small analytics application for rugby games.
 
---> until method in loop
+All the exercises can be done independently from each other and can be done by checking out the correct branch:
+`git checkout "Ex[number_of_exercise]"`
 
+All the exercises can be found here:
 
-Ex 1: Discover all these cool features by writing the kick off all along
+Exercise 1 ([here](./exercices/Ex1.md)) will give you all the insights in (data) classes, collections and types
 
---> Compare with Java code at the end
---> copy-paste java code
+Exercise 2 ([here](./exercices/Ex2.md)) will give you all the insights in inheritance, interfaces and extension functions
 
-Ex 2: explain Line-Out and let them write
-
-
-
-Ex 3: Kotin in a Spring application:
-lateinit keyword
-
-
-
-
-Extra's: Integration with Spring Boot 2
-
-On a critical note:
-The companion objects
-
-
-_Warning : Why use experimental incremental version?_
-
-### Lessons learned:
-_@SpringBootApplication_ doet een _@ComponentScan_ De package van de klasse waar de annotatie
-op gedefinieerd is, is cruciaal. 
-Zie: https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-structuring-your-code.html
+Exercise 3 ([here](./exercices/Ex3.md)) will give you all the insights about how to integrate Kotlin with Spring and Mybatis
+/docs.spring.io/spring-boot/docs/current/reference/html/using-boot-structuring-your-code.html
