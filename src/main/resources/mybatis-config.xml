@@ -1,8 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <typeAliases>
-        <package name="sample.mybatis.domain"/>
-    </typeAliases>
+    <environments default="public">
+        <environment id = "dev">
+            <transactionManager type = "JDBC"/>
+
+            <dataSource type = "UNPOOLED">
+                <property name = "driver" value = "org.postgresql.Driver"/>
+                <property name = "url" value = "jdbc:postgresql://localhost:5432/postgresdb"/>
+                <property name = "username" value = "postgres"/>
+                <property name = "password" value = "postgres"/>
+            </dataSource>
+
+        </environment>
+    </environments>
     <mappers>
-        <mapper resource="sample/mybatis/mapper/CityMapper.xml"/>
+        <package name="com.paulienvanalst.rugbymatch.repositories"/>
+
     </mappers>
 </configuration>
