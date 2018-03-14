@@ -42,3 +42,6 @@ From the front-end events are send to the back-end using some REST endpoints, ch
 You will see that only the try scoring endpoint is not implemented yet. You can implement this one, using the same syntax for the `return` statement as the other endpoints.
 
 ### c - let's save the game report
+1. Run `docker build .` in the project directory
+2. Run `docker-compose up` in the project directory
+3. Run `mvn flyway:migrate` to get the database configuration

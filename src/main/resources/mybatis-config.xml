@@ -1,0 +1,8 @@
+<configuration>
+    <typeAliases>
+        <package name="sample.mybatis.domain"/>
+    </typeAliases>
+    <mappers>
+        <mapper resource="sample/mybatis/mapper/CityMapper.xml"/>
+    </mappers>
+</configuration>
