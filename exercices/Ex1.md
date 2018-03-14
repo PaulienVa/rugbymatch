@@ -43,7 +43,7 @@ Make sure the out-commented tests in `PlayerTest` are running.
 
 We now are able to make a team, as we can make players.
 In class [Team](../src/main/kotlin/com/paulienvanalst/rugbymatch/team/Team.kt) we will implement some functions to determine if the team is ready to play.
-As a team is composed of a list of players, we will check thos conditions using some list manipulations. 
+As a team is composed of a list of players, we will check those conditions using some list manipulations. 
 
 Note that:
  * any collection in Kotlin is already a stream, comparing it to Java you don't need to do any conversion to `Stream<>`
@@ -70,6 +70,3 @@ If the scrumhalf is not there, it will be the first other starting player.
 Use the Elvis operator `?:` and the null-safety check `?` to implement this function.
 
 Make sure the tests in the CaptainTest suite of TeamTest are properly running
-
-
-//maybe add internal?
