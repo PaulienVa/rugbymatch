@@ -56,7 +56,7 @@ class GameController {
         logger.info("Publishing event!")
         return try {
             publisher.publishEvent(FinishGame(this))
-            Response(200, "The Game was started", ScoringBoard())
+            Response(200, "The Game was stopped", ScoringBoard())
         } catch(e: RuntimeException) {
             Response(500, "Oops an error occurred ${e.message}", null)
         }

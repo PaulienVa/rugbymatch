@@ -7,15 +7,15 @@
   margin: 2em;
 }
 
-.start_0 {
+.stop_0 {
   float: left;
   text-align: center;
 }
 
-.start_200 {
+.stop_200 {
   float: left;
   text-align: center;
-  background-color: #00bc8c;
+  background-color:  #c63a2a;
   border-radius: 0.3em;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@
 }
 
 
-.start_500 {
+.stop_500 {
   float: left;
   text-align: center;
   background-color: #e74c3c;
