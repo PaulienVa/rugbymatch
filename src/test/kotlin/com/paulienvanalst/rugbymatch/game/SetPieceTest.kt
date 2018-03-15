@@ -50,7 +50,7 @@ class SetPieceTest {
         val toulon = TeamTestData().validTeam(TeamName.RC_TOULON)
         val wasps = TeamTestData().validTeam(TeamName.WASPS)
 
-        assertThat(LineOut(toulon, wasps, nrPlayers, 1).isValid(), `is`(true))
+        assertThat(LineOut(toulon, wasps, nrPlayers, 1).isValid(), `is`(false))
     }
 
 
