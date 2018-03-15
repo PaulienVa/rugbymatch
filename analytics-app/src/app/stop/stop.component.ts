@@ -24,7 +24,6 @@ export class StopComponent implements OnInit {
     this.gameService.stopGame().subscribe( answer => {
       this.stateMessage = answer.message;
       this.stateCode = answer.code;
-      this.teamsForGame.emit(new Teams(answer.body.hostingTeam, answer.body.visitingTeam))
     });
   }
 
