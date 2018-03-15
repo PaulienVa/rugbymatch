@@ -26,10 +26,10 @@ Let's check! Open the test `PlayerTest` and remove the `import` statement for th
 
 *Note that this test was written in Kotlin and was perfectly working with a Java class*
 
-
 ###  c - Add one method to a data class
 
-A rugby teams is formed by 15 starting players and 7 substitutes. This means that a player can be either starting or a sub.
+A rugby teams is formed by 15 starting players and 7 substitutes. This means that a player can be either starting or a sub. The players with back number 1 until 15 are starting.
+
 You can write a `get` function in the Player data class called `isStarting()` using the following syntax:
 ```kotlin
 val isStarting
