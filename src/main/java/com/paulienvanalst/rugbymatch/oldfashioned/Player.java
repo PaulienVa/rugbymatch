@@ -8,42 +8,44 @@ import java.util.Objects;
 
 public class Player {
 
-    private final String team;
     private final Position position;
+    private final int backNumber;
 
-    public Player(String team, Position position) {
-        this.team = team;
+    public Player(Position position, int backNumber) {
         this.position = position;
+        this.backNumber = backNumber;
     }
 
-    public String getTeam() {
-        return team;
-    }
 
     public Position getPosition() {
         return position;
     }
 
-
-    @Override
-    public String toString() {
-        return "Player{" +
-                "team='" + team + '\'' +
-                ", position=" + position +
-                '}';
+    public int getBackNumber() {
+        return backNumber;
     }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Player player = (Player) o;
-        return position == player.position &&
-                Objects.equals(team, player.team);
+        return backNumber == player.backNumber &&
+                position == player.position;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(team, position);
+
+        return Objects.hash(position, backNumber);
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "position=" + position +
+                ", backNumber=" + backNumber +
+                '}';
     }
 }
