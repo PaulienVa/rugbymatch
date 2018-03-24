@@ -10,6 +10,18 @@
 
 ---
 
+## Who am I ?
+***
+
+Paulien van Alst - software engineer
+
+Interests: Data Science, Simplyfing code, new coding languages
+
+Twitter: https://twitter.com/PaulienVanAlst
+
+
+---
+
 ## Some useful facts about Kotlin
 ****
 
