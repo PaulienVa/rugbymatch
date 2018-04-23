@@ -3,7 +3,6 @@ package com.paulienvanalst.rugbymatch
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
-// Ex- 3 leave this file
 @SpringBootApplication
 class Application
 
