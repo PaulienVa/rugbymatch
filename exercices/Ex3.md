@@ -17,7 +17,7 @@ with those modifiers are not allowed to have custom getters and setters.
 ### a - Scoring board
 In the file [ScoringBoard.kt](./../src/main/kotlin/com/paulienvanalst/rugbymatch/game/ScoringBoard.kt), we will make a class called `ScoringBoard` which is a Spring component.
 This scoringboard will have two properties : `hostingTeam` and `visitingTeam` of type `TeamName` who will be initialized once the game is started.
-It will also have a list of Scores which is initialized as an empty list.
+It will also have a list of Scores which is initialized as an empty list (don't forget the `lateinit` keyword).
 
 Now this scoring board should be able to act on several events in the game. In [TimeEvents.kt](./../src/main/kotlin/com/paulienvanalst/rugbymatch/events/TimeEvents.kt) you will find three 
 main events that will influence the game board.
