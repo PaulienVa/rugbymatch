@@ -7,11 +7,10 @@ import com.paulienvanalst.rugbymatch.events.FinishGame
 import com.paulienvanalst.rugbymatch.events.HalfTime
 import com.paulienvanalst.rugbymatch.events.ScoringEvent
 import com.paulienvanalst.rugbymatch.events.StartGame
-import com.paulienvanalst.rugbymatch.team.Team
 import com.paulienvanalst.rugbymatch.team.TeamName
-import junit.framework.Assert.assertTrue
 import org.hamcrest.CoreMatchers.*
 import org.hamcrest.MatcherAssert.assertThat
+import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -69,6 +68,10 @@ class EventFlowTest {
 
         assertThat(mailingService.mailToSend, containsString("half-time score was: " + GameScore(TeamName.RC_TOULON to 5, TeamName.WASPS to 0).toString()))
         assertThat(mailingService.mailToSend,  containsString( "ended with the score of " + GameScore(TeamName.RC_TOULON to 5, TeamName.WASPS to 5).toString()))
+    }
 
+    @AfterEach
+    fun `clear scoring board` () {
+        scoringBoard.clear()
     }
 }

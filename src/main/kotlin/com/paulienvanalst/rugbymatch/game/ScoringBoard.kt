@@ -28,6 +28,11 @@ class ScoringBoard {
     fun currentScore() : GameScore  {
         return scoringHistory.getGameScore(hostingTeam, visitingTeam)
     }
+
+    fun clear () {
+        scoringHistory = emptyList()
+
+    }
 }
 
 
