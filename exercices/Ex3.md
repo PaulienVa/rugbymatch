@@ -11,7 +11,7 @@ Check the [application file](./../src/main/kotlin/com/paulienvanalst/rugbymatch/
 It should not be very different from what is known from Java.
 
 The only thing you should know to integrate spring into a Kotlin application, is the `lateinit` modifier. Each property that is initialized through 
-dependency injection, should be marked with this modifier. `lateinit` kan only be used together with the `var` modifier. Properties annotated 
+dependency injection, should be marked with this modifier. `lateinit` can only be used together with the `var` modifier. Properties annotated 
 with those modifiers are not allowed to have custom getters and setters.
 
 ### a - Scoring board
