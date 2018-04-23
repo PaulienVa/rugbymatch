@@ -1,5 +1,6 @@
 package com.paulienvanalst.rugbymatch.team
 
+import com.paulienvanalst.rugbymatch.oldfashioned.Player
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.notNullValue

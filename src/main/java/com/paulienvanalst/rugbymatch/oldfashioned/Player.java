@@ -1,10 +1,9 @@
 package com.paulienvanalst.rugbymatch.oldfashioned;
 
 import com.paulienvanalst.rugbymatch.team.Position;
+import org.apache.commons.lang.NotImplementedException;
 
 import java.util.Objects;
-
-// -- Ex 1
 
 public class Player {
 
@@ -25,6 +24,9 @@ public class Player {
         return backNumber;
     }
 
+    public boolean isStarting() {
+        throw new NotImplementedException();
+    }
 
     @Override
     public boolean equals(Object o) {
