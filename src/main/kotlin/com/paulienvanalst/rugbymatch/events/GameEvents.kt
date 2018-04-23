@@ -1,3 +1,9 @@
 package com.paulienvanalst.rugbymatch.events
 
-//Ex 2 to implement
+import org.springframework.context.ApplicationEvent
+import com.paulienvanalst.rugbymatch.team.TeamName
+import com.paulienvanalst.rugbymatch.game.*
+
+sealed class SetPieceEvent(source: Any?, val someArgs: Any) : ApplicationEvent(source)
+
+

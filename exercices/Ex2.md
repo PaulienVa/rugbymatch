@@ -21,9 +21,12 @@ Run the tests for SetPieces.
 
 ### b - Inheritance
 As we are building an application registering all the events in a rugby game, we will start writing events for the played set pieces.
+For this we will be using the `ApplicationEvent` from Spring: an application event has a source (object the object on which the event initially occurred) and all the data related to the event.
 
 In the file [GameEvents.kt](../src/main/kotlin/com/paulienvanalst/rugbymatch/events/GameEvents.kt) add a SetPieceEvent class implementing ApplicationEvent from Spring.
-This event has a SetPiece and a winning team.
+Data related to this event is a SetPiece and a winning team.
+`SetPieceEvent` is the parent class of the events that will follow later in the exercise. Therefore we will make it a `sealed` class.
+For more information check the [Kotlin docs](http://kotlinlang.org/docs/reference/sealed-classes.html)
 
 Now as we are playing Scrums and LineOuts, we are making two type of Events:
 * ScrumWasPlayed
@@ -38,14 +41,14 @@ Note a class is by default `final`, so you need to do something to make this hap
 In the near feature we want to know which set pieces where won by which team. As this statistic is a property of `List<SetPieceEvent>` we will use extenstion functions to implement this.
 Extension functions can be implemented like this:
 ```kotlin
-List<SetPiece>.name() : ReturnType = this.something
+List<SetPieceEvent>.name() : ReturnType = this.something
 ```
 
 Write two extension functions returning the set pieces won by/lost by a certain team.
 The interface being : `winBy(teamName)` and `lostBy(teamName)`.
 
 We also want to have a function returning all the scrum events `scrumEvents()` and one returning all the line out events (`lineOutEvents()`).
-Note that you can use `as` to check if a object is of a certain type.
+Note that you can use `is` to check if a object is of a certain type.
 
 Run the tests for SetPiecesEvent
 
