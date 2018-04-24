@@ -16,14 +16,14 @@ The only thing is that classes in Spring are final. Spring does not really like 
 As a developer you have two choices: either make this explicit and declare the Spring annotated class as `open class Something` or use the `all-open maven plugin`.
 In this workshop we will choose the explicit option, as we like the concept of class to be final.
 
-The only thing you should know to integrate spring into a Kotlin application, is the `lateinit` modifier. Each property that is initialized through 
+Next to that, you should know to integrate spring into a Kotlin application, is the `lateinit` modifier. Each property that is initialized through 
 dependency injection, should be marked with this modifier. `lateinit` can only be used together with the `var` modifier. Properties annotated 
 with those modifiers are not allowed to have custom getters and setters.
 
 ### a - Scoring board
 In the file [ScoringBoard.kt](./../src/main/kotlin/com/paulienvanalst/rugbymatch/game/ScoringBoard.kt), we will make a class called `ScoringBoard` which is a Spring component.
 This scoringboard will have two properties : `hostingTeam` and `visitingTeam` of type `TeamName` who will be initialized once the game is started.
-It will also have a list of Scores which is initialized as an empty list (don't forget the `lateinit` keyword).
+It will also have a list of Scores which is initialized as an empty list.
 
 Now this scoring board should be able to act on several events in the game. In [TimeEvents.kt](./../src/main/kotlin/com/paulienvanalst/rugbymatch/events/TimeEvents.kt) you will find three 
 main events that will influence the game board.
