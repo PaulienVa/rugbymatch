@@ -4,7 +4,7 @@ import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
 
 @Component
-class MailingService {
+open class MailingService {
 
     var mailToSend : String = ""
 

@@ -11,7 +11,7 @@ import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
 
 @Component
-class GameReporter {
+open class GameReporter {
     private val LOG = LogManager.getLogger(GameReporter::class.java)
 
     @Autowired

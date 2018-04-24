@@ -7,7 +7,7 @@ import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
 
 @Component
-class ScoringBoard {
+open class ScoringBoard {
 
     private var scoringHistory : List<Score> = emptyList()
 
