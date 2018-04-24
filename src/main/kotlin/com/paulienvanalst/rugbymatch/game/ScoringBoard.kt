@@ -7,8 +7,7 @@ import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
 
 @Component
-//Ex 3
-class ScoringBoard {
+open class ScoringBoard {
     private lateinit var hostingTeam : TeamName
     private lateinit var visitingTeam : TeamName
 
