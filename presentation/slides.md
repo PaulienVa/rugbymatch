@@ -44,7 +44,7 @@
 - Exercise 2 : inheritance, interfaces and extension functions
 
 
-- Exercise 3 : how to integrate Kotlin with Spring and Hibernate
+- Exercise 3 : how to integrate Kotlin with Spring
 ****
 
 
@@ -60,6 +60,7 @@ git checkout https://github.com/YOUR-USERNAME/rugbymatch.git
 ```
 
 ##### On `master` you can find the `README.md` with the instruction
+##### You won't find any code on master, to start with the exercise please checkout the corresponding branches (`Ex1`, `Ex2` or `Ex3`) 
 ****
 
 
