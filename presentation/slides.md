@@ -43,6 +43,8 @@ Twitter: https://twitter.com/PaulienVanAlst
 
 
 - Everything you are used to in the **Java ecosystem** are **staying the same**, only the (business) logic will be written in Kotlin
+
+- **It is just a preview**: if you want more: we do offer a training session for two days: you can contact Roy Wasse for more details (roy@openvalue.nl)
 ****
 ---
 ## Setup of the workshop
