@@ -41,7 +41,6 @@ open class GameController {
     fun tryToulon(): String {
         logger.info("Publishing try event!")
 
-        // todo implement in ex 3
         return try {
             publisher.publishEvent(ScoringEvent(this, Type.TRY, TeamName.RC_TOULON))
             "Toulon scored a try"
