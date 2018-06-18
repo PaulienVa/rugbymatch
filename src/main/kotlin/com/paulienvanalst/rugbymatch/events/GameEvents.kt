@@ -4,8 +4,7 @@ import com.paulienvanalst.rugbymatch.game.*
 import com.paulienvanalst.rugbymatch.team.TeamName
 import org.springframework.context.ApplicationEvent
 
-//Ex 2 to implement
-open class SetPieceEvent(source: Any?, val setPiece: SetPiece, val winningTeam: TeamName) : ApplicationEvent(source)
+sealed class SetPieceEvent(source: Any?, val setPiece: SetPiece, val winningTeam: TeamName) : ApplicationEvent(source)
 
 fun List<SetPieceEvent>.wonBy(team: TeamName) = this.filter { it.winningTeam == team }
 fun List<SetPieceEvent>.lineOutEvents() = this.filter { it is LineOutWasPlayed }

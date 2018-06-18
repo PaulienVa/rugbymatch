@@ -23,7 +23,6 @@ open class GameReporter {
     private lateinit var gameReport : GameReport
 
     @EventListener
-    //Leave the this for ex 3
     fun startTheReport(startGame: StartGame) {
         LOG.info("start the game ${startGame.hostingTeam} vs ${startGame.visitingTeam}")
         gameReport = GameReport(startGame.hostingTeam, startGame.visitingTeam)
@@ -39,11 +38,9 @@ open class GameReporter {
         gameReport.setFinalScore(scoringBoard.currentScore())
         return GenerateGameReport(this, this.gameReport)
     }
-    // implement this in ex 3
 
     @EventListener
     fun updatingReportAfterSetPiece(setPieceEvent: SetPieceEvent) {
-        //todo implment this in ex 3
         gameReport.addSetPieceEvents(setPieceEvent)
     }
 
@@ -62,7 +59,6 @@ class GameReport (val hostingTeam : TeamName, val visitingTeam : TeamName) {
 
 
     fun addSetPieceEvents(setPieceEvent: SetPieceEvent) {
-        //todo implment this in ex 3
         this.setPieceEvents += setPieceEvent
         if (setPieceEvent is ScrumWasPlayed) {
             scrums += (setPieceEvent.setPiece as Scrum)
