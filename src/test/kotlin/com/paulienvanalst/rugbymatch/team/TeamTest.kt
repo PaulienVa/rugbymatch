@@ -58,7 +58,7 @@ class TeamTest {
                 Player(Position.WING, 15)
 
         @Test
-        fun `it's back number is 9 when a scrumhalf is present`() {
+        fun `it's back number is 7 when a scrumhalf is present`() {
             val team = Team(onePlayerPerPosition, TeamName.RC_TOULON)
             assertThat(team.captainBackNumber(), `is`(7))
         }
