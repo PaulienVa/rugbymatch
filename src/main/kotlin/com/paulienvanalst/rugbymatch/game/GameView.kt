@@ -3,6 +3,7 @@ package com.paulienvanalst.rugbymatch.game
 import com.paulienvanalst.rugbymatch.events.FinishGame
 import com.paulienvanalst.rugbymatch.events.ScoringEvent
 import com.paulienvanalst.rugbymatch.events.StartGame
+import com.paulienvanalst.rugbymatch.team.NotImplementedException
 import com.paulienvanalst.rugbymatch.team.TeamName
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
@@ -41,8 +42,7 @@ open class GameController {
     fun tryToulon(): String {
         logger.info("Publishing try event!")
 
-        // todo implement in ex 3
-        return ""
+        throw NotImplementedException()
     }
 
     @GetMapping("/end-game")

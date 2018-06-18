@@ -3,6 +3,7 @@ package com.paulienvanalst.rugbymatch.analytics
 import com.paulienvanalst.rugbymatch.team.TeamName
 import com.paulienvanalst.rugbymatch.events.*
 import com.paulienvanalst.rugbymatch.game.*
+import com.paulienvanalst.rugbymatch.team.NotImplementedException
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationEvent
@@ -41,7 +42,7 @@ open class GameReporter {
 
     @EventListener
     fun updatingReportAfterSetPiece(setPieceEvent: SetPieceEvent) {
-        //todo implment this in ex 3
+        throw NotImplementedException()
     }
 
 }
@@ -59,7 +60,7 @@ class GameReport (val hostingTeam : TeamName, val visitingTeam : TeamName) {
 
 
     fun addSetPieceEvents(setPieceEvent: SetPieceEvent) {
-        //todo implment this in ex 3
+        throw NotImplementedException()
 
     }
 
