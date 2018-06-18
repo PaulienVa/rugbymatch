@@ -1,5 +1,7 @@
 package com.paulienvanalst.rugbymatch.game
 
+import com.paulienvanalst.rugbymatch.team.NotImplementedException
+
 
 interface SetPiece {
    //todo to implement
@@ -7,13 +9,13 @@ interface SetPiece {
     fun isValid() : Boolean
 }
 
-data class Scrum() : SetPiece {
+data class Scrum(val a: Object, val b: Object) : SetPiece {
 
     /**
      * A scrum is valid when both teams participating have a scrum
      */
     override fun isValid(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        throw NotImplementedException()
     }
 }
 
@@ -21,9 +23,9 @@ data class Scrum() : SetPiece {
  * A lineout is valid when both team participating have the same number of players playing the line-out
  */
 
-data class LineOut() : SetPiece {
+data class LineOut(val a: Object, val b: Object) : SetPiece {
 
     override fun isValid(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        throw NotImplementedException()
     }
 }
