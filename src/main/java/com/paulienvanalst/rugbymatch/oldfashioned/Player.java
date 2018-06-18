@@ -1,7 +1,7 @@
 package com.paulienvanalst.rugbymatch.oldfashioned;
 
+import com.paulienvanalst.rugbymatch.team.NotImplementedException;
 import com.paulienvanalst.rugbymatch.team.Position;
-import org.apache.commons.lang.NotImplementedException;
 
 import java.util.Objects;
 

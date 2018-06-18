@@ -1,7 +1,5 @@
 package com.paulienvanalst.rugbymatch.team
 
-import org.apache.commons.lang.NotImplementedException
-
 
 data class Team (val players: List<Player>, val name: TeamName) {
     /**
