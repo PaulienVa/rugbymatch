@@ -5,7 +5,7 @@
 Copy/paste the Java code from the [Player Class](./../src/main/java/com/paulienvanalst/rugbymatch/team/Player.java) into 
 the Kotlin file [Player.kt](../src/main/kotlin/com/paulienvanalst/rugbymatch/team/Player.kt)
 
-**Do not copy/paste the `package` and `import` statements.**
+**IMPORTANT: Do not copy/paste the `package` and `import` statements.**
 
 You will see an  IntelliJ pop-up, asking you if you want to convert you copied Java code into Kotlin, answer Yes and see what happens.
 
@@ -31,11 +31,12 @@ Let's check! Open the test `PlayerTest` and remove the `import` statement for th
 A rugby teams is formed by 15 starting players and 7 substitutes. This means that a player can be either starting or a sub. The players with back number 1 until 15 are starting.
 
 You can write a `get` function in the Player data class called `isStarting()` using the following syntax:
+
 ```kotlin
 val isStarting
         get() = 
 ```
-*Note the inRange feature from Kotlin*
+*Note the inRange feature from Kotlin. See for more info [here](https://kotlinlang.org/docs/reference/ranges.html)*
 
 Make sure the out-commented tests in `PlayerTest` are running.
 
@@ -43,21 +44,28 @@ Make sure the out-commented tests in `PlayerTest` are running.
 
 We now are able to make a team, as we can make players.
 In class [Team](../src/main/kotlin/com/paulienvanalst/rugbymatch/team/Team.kt) we will implement some functions to determine if the team is ready to play.
-As a team is composed of a list of players, we will check those conditions using some list manipulations. 
+As a team is composed of a list of players, we will check those conditions using some collection manipulations. 
 
 Note that:
  * any collection in Kotlin is already a stream, comparing it to Java you don't need to do any conversion to `Stream<>`
- * the single parameter of a lambda has an implicit name: `it`
+ * A lambda expression can be written into brackets `{}`.
+ * the single parameter of a lambda has an implicit name: `it`.
+ 
+ An example illustrating those points could be:  Given a collection named `examples`, a valid collection manipulation could be: 
+ 
+ `examples.filter { it.forExercise1() }`
 
 Team has to be compliant to the following conditions:
  - _A team has enough players:_ Write a member `hasEnoughPlayers` that verifies that the team has more than 15 players.
  - _A team has enough starting players:_ Write a member `hasEnoughStartingPlayers` that verifies that the team has more than 15 starting players.
- - _A team has any subsitutes_: Write a member `hasAnySubstitutes` that verifies that the team has at least one substitute using `any{}`.
+ - _A team has any subsitutes_: Write a member `hasAnySubstitutes` that verifies that the team has at least one substitute using `.any{}`.
 
 
 Make sure the tests in the ValidatingTeamTest suite of TeamTest are properly running
 
 ### e - Types
+This exercise is about null-safety. For more information, please refer to the documentation [here](https://kotlinlang.org/docs/reference/null-safety.html)
+
 Now, we want to find a player that plays the position of scrumhalf, implement a function `scrumhalf` using `find{}`.
 Note: It is not sure that a team has a scrumhalf, so this variable can be nullable.
 This return type will be `Player?`
