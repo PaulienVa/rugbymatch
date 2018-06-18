@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
 
-class SetPieceTest {
+class SetPiecesTest {
 
 //    @Test
 //    fun `a scrum is valid when both teams have a scrum`() {
