@@ -13,16 +13,18 @@
 ## Who am I ?
 ***
 
-Paulien van Alst - software engineer
+Paulien van Alst - software engineer at OpenValue (www.openvalue.nl)
 
-Interests: Data Science, Simplyfing code, new coding languages
+Interests: data science, simplifying code, new coding languages
+
+Sports: used to play rugby and nowadays: boxing, cycling and swimming
 
 Twitter: https://twitter.com/PaulienVanAlst
 
 
 ---
 
-## Some useful facts about Kotlin
+## Some facts about Kotlin
 ****
 
 - Statically-typed language running on the JVM 
@@ -39,15 +41,26 @@ Twitter: https://twitter.com/PaulienVanAlst
 ## Aim of the workshop
 ****
 
-- Develop a web-app using Kotlin and discover some useful features of the language.
+- Develop a web-app using Kotlin and discover some (useful) features of the language.
 
+- Disclaimer: _all the features shown, should always be used with care_
 
 - Everything you are used to in the **Java ecosystem** are **staying the same**, only the (business) logic will be written in Kotlin
 
 - **It is just a preview**: if you want more: we do offer a training session for two days: you can contact Roy Wasse for more details (roy@openvalue.nl)
 ****
 ---
-## Setup of the workshop
+## What are you going to build ?
+****
+You will be starting to build an application that is keeping track of the events in a rugby game.
+
+**Yes, this won't be a HelloWorld app ;)**
+
+
+****
+
+---
+## How are you going to build it?
 ****
 
 #### Each exercise is one branch and can be done independently of each other
