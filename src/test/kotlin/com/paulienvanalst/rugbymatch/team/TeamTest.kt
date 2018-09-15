@@ -7,7 +7,9 @@ import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
 
+@ExtendWith()
 class TeamTest {
     @Nested
     @DisplayName("When a team")
@@ -21,7 +23,7 @@ class TeamTest {
 
 
         @Test
-        fun ` with 14 players has not enough players` () {
+        fun `with 14 players has not enough players` () {
             val players = onePlayerPerPosition.drop(1)
             assertThat(Team(players, TeamName.RC_TOULON).hasEnoughPlayers, `is`(false))
         }
@@ -67,7 +69,7 @@ class TeamTest {
         fun `it's back number can not be retrieved when a scrumhalf is not present`() {
             val noScrumHalf = onePlayerPerPosition.filter { it.position !=  Position.SCRUM_HALF}
             val team = Team(noScrumHalf, TeamName.RC_TOULON)
-            assertThrows(KotlinNullPointerException::class.java, { team.captainBackNumber() })
+            assertThrows(KotlinNullPointerException::class.java) { team.captainBackNumber() }
         }
 
         @Test
