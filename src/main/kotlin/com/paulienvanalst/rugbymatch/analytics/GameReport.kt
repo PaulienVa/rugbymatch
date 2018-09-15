@@ -18,9 +18,6 @@ open class GameReporter {
     @Autowired
     private lateinit var scoringBoard: ScoringBoard
 
-    @Autowired
-    private lateinit var eventPublisher: ApplicationEventPublisher
-
     private lateinit var gameReport : GameReport
 
     @EventListener
@@ -47,7 +44,7 @@ open class GameReporter {
 
 }
 
-class GenerateGameReport (source: Any?, val report : GameReport) : ApplicationEvent(source)
+class GenerateGameReport (source: Any, val report : GameReport) : ApplicationEvent(source)
 
 class GameReport (val hostingTeam : TeamName, val visitingTeam : TeamName) {
 
