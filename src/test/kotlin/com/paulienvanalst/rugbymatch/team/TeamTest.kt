@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test
 class TeamTest {
     @Nested
     @DisplayName("When a team")
-    class ValidatingTeamTest {
+    inner class ValidatingTeamTest {
 
         private val onePlayerPerPosition = Position.values().map { Player(it, it.ordinal + 1) } +
                 Player(Position.LOCK, 12) +
@@ -50,7 +50,7 @@ class TeamTest {
 
     @Nested
     @DisplayName("When a team has a captain")
-    class CaptainTest {
+    inner class CaptainTest {
         private val onePlayerPerPosition = Position.values().map { Player(it, it.ordinal + 1) } +
                 Player(Position.LOCK, 12) +
                 Player(Position.FLANKER, 13) +
