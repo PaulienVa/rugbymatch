@@ -1,3 +1,6 @@
+# custom
+propagate_commit.sh
+
 /.idea
 *.iml
 /target
