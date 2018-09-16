@@ -36,10 +36,10 @@ class SetPieceEventTest {
                 ScrumWasPlayed(this, scrum = Scrum(toulon, wasps), winningTeam = TeamName.WASPS),
                 ScrumWasPlayed(this, scrum = Scrum(toulon, wasps), winningTeam = TeamName.RC_TOULON),
                 ScrumWasPlayed(this, scrum = Scrum(toulon, wasps), winningTeam = TeamName.RC_TOULON),
-                LineOutWasPlayed(this, lineOut = LineOut(toulon, wasps, 5, 5), winningTeam = TeamName.WASPS),
-                LineOutWasPlayed(this, lineOut = LineOut(toulon, wasps, 5, 5), winningTeam = TeamName.RC_TOULON),
-                LineOutWasPlayed(this, lineOut = LineOut(toulon, wasps, 8, 8), winningTeam = TeamName.RC_TOULON),
-                LineOutWasPlayed(this, lineOut = LineOut(toulon, wasps, 8, 8), winningTeam = TeamName.RC_TOULON)
+                LineOutWasPlayed(this, lineOut = LineOut(toulon, wasps), winningTeam = TeamName.WASPS),
+                LineOutWasPlayed(this, lineOut = LineOut(toulon, wasps), winningTeam = TeamName.RC_TOULON),
+                LineOutWasPlayed(this, lineOut = LineOut(toulon, wasps), winningTeam = TeamName.RC_TOULON),
+                LineOutWasPlayed(this, lineOut = LineOut(toulon, wasps), winningTeam = TeamName.RC_TOULON)
         )
     }
 }

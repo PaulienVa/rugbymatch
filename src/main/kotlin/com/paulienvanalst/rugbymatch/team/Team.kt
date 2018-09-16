@@ -10,13 +10,20 @@ data class Team (val players: List<Player>, val name: TeamName) {
 
     val scrumHalf : Player? = players.find { it.position == Position.SCRUM_HALF }
 
+    val nrOfPlayersInlineOut: Int = players.count { it.position.isFrontFive() }
+
     fun captainBackNumber() : Int = this.scrumHalf!!.backNumber
 
     fun replacingCaptainBackNumber() : Int = this.scrumHalf?.backNumber ?: players.first { it.isStarting }.backNumber
 
-    fun hasScrum(): Boolean {
+    fun hasEnoughScrumPlayersInPlay(): Boolean {
         return players.map { it.position }.containsAll(Position.getForwards())
     }
 
-}
+    fun withExtraLock() : Team  {
+        val newBackNumber = this.players.size + 1
+        val newListOfPlayers = this.players + Player(Position.LOCK, newBackNumber)
+        return this.copy(newListOfPlayers, this.name)
+    }
 
+}
