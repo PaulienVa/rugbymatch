@@ -22,14 +22,14 @@ data class Team (val players: List<Player>, val name: TeamName) {
         get() = throw NotImplementedException()
 
     /**
-     * The captain, when present, should always where back number 9
+     * The captain, when present, should always where back number 7
      */
     fun captainBackNumber(): Int? {
         throw NotImplementedException()
     }
 
     /**
-     * When no scrumhalf present (player with back number 9)
+     * When no scrumhalf present (player with back number 7)
      * the captain is wearing the first back number we can find among the starting players.
      */
     fun replacingCaptainBackNumber(): Int? {
