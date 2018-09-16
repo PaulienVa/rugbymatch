@@ -16,6 +16,8 @@ enum class Position {
 
     fun isFrontRow() : Boolean = this == LOOSEHEAD_PROP || this == TIGHTHEAD_PROP || this == HOOKER
 
+    fun isFrontFive() : Boolean = this.isFrontRow() || this == LOCK
+
 
     companion object {
         fun getForwards() : List<Position> {
