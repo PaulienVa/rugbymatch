@@ -12,7 +12,7 @@ More information about interfaces can be found [here](https://kotlinlang.org/doc
 Tip: an interface can be implemented like this `class ClassName() : Interface`
 
 A LineOut is a bit different than a scrum, the throwing in team can choose the number of players participating in the line out. The other team has to follow.
-Add two parameters in the line out constructor representing the number of players participating of each team.
+Check the `Team.kt` class, which now has an extra method
 
 Now implement the function `isValid()` for both classes:
 * a scrum is valid if each team has a scrum (use the function in `Team`) 
