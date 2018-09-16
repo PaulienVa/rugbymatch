@@ -14,5 +14,4 @@ fun List<SetPieceEvent>.lostBy(team: TeamName) = this.filter { it.winningTeam !=
 class ScrumWasPlayed(source: Any,  scrum: Scrum, winningTeam: TeamName) : SetPieceEvent(source, scrum, winningTeam)
 class LineOutWasPlayed(source: Any, lineOut: LineOut, winningTeam: TeamName) : SetPieceEvent(source, lineOut, winningTeam)
 
-// -- Ex 3
 class ScoringEvent(source: Any, val type: Type, val team: TeamName) : ApplicationEvent(source)
