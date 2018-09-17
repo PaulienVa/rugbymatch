@@ -1,9 +1,9 @@
 package com.paulienvanalst.rugbymatch
 
-import com.paulienvanalst.rugbymatch.team.TeamName
 import com.paulienvanalst.rugbymatch.team.Player
 import com.paulienvanalst.rugbymatch.team.Position
 import com.paulienvanalst.rugbymatch.team.Team
+import com.paulienvanalst.rugbymatch.team.TeamName
 
 class TeamTestData {
     fun  inValidTeam (teamName: TeamName) : Team {

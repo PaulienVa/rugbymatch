@@ -4,8 +4,6 @@ import com.paulienvanalst.rugbymatch.team.Position;
 
 import java.util.Objects;
 
-// -- Ex 1
-
 public class Player {
 
     private final Position position;
