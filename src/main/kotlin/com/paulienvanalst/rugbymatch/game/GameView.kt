@@ -1,7 +1,6 @@
 package com.paulienvanalst.rugbymatch.game
 
 import com.paulienvanalst.rugbymatch.events.FinishGame
-import com.paulienvanalst.rugbymatch.events.ScoringEvent
 import com.paulienvanalst.rugbymatch.events.StartGame
 import com.paulienvanalst.rugbymatch.team.NotImplementedException
 import com.paulienvanalst.rugbymatch.team.TeamName

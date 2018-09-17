@@ -1,13 +1,15 @@
 package com.paulienvanalst.rugbymatch.analytics
 
-import com.paulienvanalst.rugbymatch.team.TeamName
 import com.paulienvanalst.rugbymatch.events.*
-import com.paulienvanalst.rugbymatch.game.*
+import com.paulienvanalst.rugbymatch.game.GameScore
+import com.paulienvanalst.rugbymatch.game.LineOut
+import com.paulienvanalst.rugbymatch.game.ScoringBoard
+import com.paulienvanalst.rugbymatch.game.Scrum
 import com.paulienvanalst.rugbymatch.team.NotImplementedException
+import com.paulienvanalst.rugbymatch.team.TeamName
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationEvent
-import org.springframework.context.ApplicationEventPublisher
 import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
 
