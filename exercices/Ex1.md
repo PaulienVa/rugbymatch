@@ -2,7 +2,7 @@
 
 ### a - Special feature in IntelliJ
 
-Copy/paste the Java code from the [Player Class](./../src/main/java/com/paulienvanalst/rugbymatch/team/Player.java) into 
+Copy/paste the Java code from the class [Player.java](./../src/main/java/com/paulienvanalst/rugbymatch/team/Player.java) into 
 the Kotlin file [Player.kt](../src/main/kotlin/com/paulienvanalst/rugbymatch/team/Player.kt)
 
 **IMPORTANT: Do not copy/paste the `package` and `import` statements.**
@@ -11,7 +11,8 @@ You will see an  IntelliJ pop-up, asking you if you want to convert you copied J
 
 ### b - Refactor into awesome classes
 
-The code that IntelliJ converted is ok-ish, but let's optimize it. The player class is just a simple PoJo for now : it has getters, a `toString()`, `hashCode()` and `equals()` method. 
+The code that IntelliJ converted is ok-ish. It compiles and it looks like Kotlin. But it still Kotlin code that is equivalent to Java code. Let's now make it some proper Kotlin Code.
+The player class is just a simple PoJo for now : it has getters, a `toString()`, `hashCode()` and `equals()` method. 
 In Kotlin we can call that a data class. A data class will implicity have getters for the private members, and a `toString()`, `hashCode()`, and `equals()` method. 
 Additionally, as we embrace immutability, a data class will also have a `copy()` method
 
