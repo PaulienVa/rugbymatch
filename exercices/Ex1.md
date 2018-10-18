@@ -29,12 +29,8 @@ Let's check! Open the test `PlayerTest` and remove the `import` statement for th
 
 <<<<<<< HEAD
 ###  c - Add one method to a data class
-=======
-A rugby teams is formed by 15 starting players and 7 substitutes. This means that a player can be either starting or a sub. The players with backnumbers 1 until 15 are starting.
->>>>>>> 3abdce8... [DOCUMENTATION] - added some extra explanations for exercise 1 and added some literature tips
-
 A rugby teams is formed by 15 starting players and 7 substitutes. This means that a player can be either starting or a sub.
-You can write a `get` function in the Player data class called `isStarting()` using the following syntax:
+ You can write a get function in the Player data class called isStarting() using the following syntax:
 ```kotlin
 val isStarting
         get() = 
