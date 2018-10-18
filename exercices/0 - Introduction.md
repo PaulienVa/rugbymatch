@@ -25,12 +25,9 @@ Enjoy, learn and embrace Kotlin!
 | 3 | `Ex3` |`Integration with Spring` |
 
 ### Some useful `git` commands
- | Command | Description |
- |-----------------------------|------------------------------|
- | `git checkout {branchName}` | Checkout the branch you need |
- | `git stash save {nameOfYourSave}` | Stash your changes and give your save a name |
- | `git stash pop {nameOfYourSave}`  | Bring back your changes earlier saved |
- | `git commit -m {commitMessage}`   | Commit your code (since you are working on your own fork)|
- 
- 
- 
+| Command | Description |
+|-----------------------------|------------------------------|
+| `git checkout {branchName}` | Checkout the branch you need |
+| `git stash save {nameOfYourSave}` | Stash your changes and give your save a name |
+| `git stash pop {nameOfYourSave}`  | Bring back your changes earlier saved |
+| `git commit -m {commitMessage}`   | Commit your code (since you are working on your own fork)|
