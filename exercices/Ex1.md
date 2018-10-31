@@ -45,6 +45,7 @@ As a team is composed of a list of players, we will check those conditions using
 
 Note that:
  * any collection in Kotlin is already a stream, comparing it to Java you don't need to do any conversion to `Stream<>`
+ * A lambda expression can be written into brackets `{}`.
  * the single parameter of a lambda has an implicit name: `it`
 
 Team has to be compliant to the following conditions:
