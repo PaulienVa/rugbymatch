@@ -44,10 +44,14 @@ In class [Team](../src/main/kotlin/com/paulienvanalst/rugbymatch/team/Team.kt) w
 As a team is composed of a list of players, we will check those conditions using some collection manipulations. 
 
 Note that:
- * any collection in Kotlin is already a stream, comparing it to Java you don't need to do any conversion to `Stream<>`
+ * any collection in Kotlin is supports the same methods as the Java `Stream`. Comparing it to Java you don't need to do any conversion to `Stream<>`
  * A lambda expression can be written into brackets `{}`.
- * the single parameter of a lambda has an implicit name: `it`
-
+ * the single parameter of a lambda has an implicit name: `it`.
+ 
+ An example illustrating those points could be:  Given a collection named `examples`, a valid collection manipulation could be: 
+ 
+ `examples.filter { it.forExercise1() }`
+ 
 Team has to be compliant to the following conditions:
  - _A team has enough players:_ Write a member `hasEnoughPlayers` that verifies that the team has more than 15 players.
  - _A team has enough starting players:_ Write a member `hasEnoughStartingPlayers` that verifies that the team has more than 15 starting players.
