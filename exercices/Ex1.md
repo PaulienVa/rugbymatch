@@ -48,7 +48,7 @@ In class [Team](../src/main/kotlin/com/paulienvanalst/rugbymatch/team/Team.kt) w
 As a team is composed of a list of players, we will check those conditions using some collection manipulations. 
 
 Note that:
- * any collection in Kotlin is already a stream, comparing it to Java you don't need to do any conversion to `Stream<>`
+ * any collection in Kotlin is supports the same methods as the Java `Stream`. Comparing it to Java you don't need to do any conversion to `Stream<>`
  * A lambda expression can be written into brackets `{}`.
  * the single parameter of a lambda has an implicit name: `it`.
  
