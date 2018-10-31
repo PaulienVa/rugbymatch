@@ -54,8 +54,8 @@ Note that:
  An example illustrating those points could be:  Given a collection named `examples`, a valid collection manipulation could be: 
  
  `examples.filter { it.forExercise1() }`
-
-Team has to be compliant to the following conditions:
+ 
+ Team has to be compliant to the following conditions:
  - _A team has enough players:_ Write a member `hasEnoughPlayers` that verifies that the team has more than 15 players.
  - _A team has enough starting players:_ Write a member `hasEnoughStartingPlayers` that verifies that the team has more than 15 starting players.
  - _A team has any subsitutes_: Write a member `hasAnySubstitutes` that verifies that the team has at least one substitute using `.any{}`.
