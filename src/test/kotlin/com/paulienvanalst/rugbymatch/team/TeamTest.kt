@@ -13,7 +13,6 @@ import org.junit.jupiter.api.extension.ExtendWith
 @ExtendWith()
 class TeamTest {
     @Nested
-    @Disabled
     @DisplayName("Ex 1d: When a team")
     inner class ValidatingTeamTest {
 
@@ -53,7 +52,6 @@ class TeamTest {
     }
 
     @Nested
-    @Disabled
     @DisplayName("Ex 1e: When a team has a captain")
     inner class CaptainTest {
         private val onePlayerPerPosition = Position.values().map { Player(it, it.ordinal + 1) } +
