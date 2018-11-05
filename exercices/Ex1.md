@@ -62,20 +62,20 @@ Note that:
  - _A team has any subsitutes_: Write a member `hasAnySubstitutes` that verifies that the team has at least one substitute using `.any{}`.
 
 
-Make sure the tests in the ValidatingTeamTest suite of TeamTest are properly running
+Make sure the tests in the `ValidatingTeamTest` suite of `TeamTest` are properly running (do not forget to remove the `@Disabled` annotation).
 
 ### e - Types
 This exercise is about null-safety. For more information, please refer to the documentation [here](https://kotlinlang.org/docs/reference/null-safety.html)
 
 Now, we want to find a player that plays the position of scrumhalf, implement a function `scrumhalf` using `find{}`.
-Note: It is not sure that a team has a scrumhalf, so this variable can be nullable.
-As it can be nullable, its return type will be `Player?`
+Note: It is not sure that a team has a scrumhalf, so this variable can be nullable. 
+As it can be nullable, its return type will be `Player?`.
 
 Let's assume, we want at all time to know the backnumber of the captain and that this captain is always the scrumhalf.
-Implement this function using the null-safe check and implement this using `!!`
+Implement this function using the null-safe check and implement this using `!!`.
 
 As the scrumhalf can also be absent, the replacing captain will be implemented as follows: 
 If the scrumhalf is not there, it will be the first other starting player.
 Use the Elvis operator `?:` and the null-safety check `?` to implement this function.
 
-Make sure the tests in the CaptainTest suite of TeamTest are properly running
+Make sure the tests in the `CaptainTest` suite of `TeamTest` are properly running (do not forget to remove the `@Disabled` annotation).
