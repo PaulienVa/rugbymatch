@@ -23,7 +23,8 @@ the `{}` will now gray out, they are useless.
 
 _Or did you ?_ 
 
-Let's check! Open the test `PlayerTest` and remove the `import` statement for the Player class into the Kotlin package and check if the test still runs.
+Let's check! Open the test `PlayerTest` and remove the `import` statement for the Player class into the Kotlin package.
+Now enable the first test suite `PlayerClassTest` by removing the `@Disable` annotation. Run this suite to check if the conversion was successful.
 
 *Note that this test was written in Kotlin and was perfectly working with a Java class*
 
@@ -39,7 +40,7 @@ val isStarting
 ```
 *Note the inRange feature from Kotlin. See for more info [here](https://kotlinlang.org/docs/reference/ranges.html)*
 
-Make sure the out-commented tests in `PlayerTest` are running.
+Make sure the tests in suite `PlayerIsStartingTest` in `PlayerTest` are running (do not forget to remove the `@Disabled` annotation).
 
 ###  d - Collections
 
