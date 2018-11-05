@@ -1,5 +1,6 @@
 package com.paulienvanalst.rugbymatch.game
 
+import com.paulienvanalst.rugbymatch.team.NotImplementedException
 import com.paulienvanalst.rugbymatch.team.Team
 
 interface SetPiece {
@@ -9,7 +10,7 @@ interface SetPiece {
     fun isValid(): Boolean
 }
 
-data class Scrum(val a: Object, val b: Object) : SetPiece {
+data class Scrum(override val attackingTeam: Team, override val defendingTeam: Team) : SetPiece {
 
     /**
      * A scrum is valid when both teams participating have a scrum
