@@ -1,6 +1,8 @@
 package com.paulienvanalst.rugbymatch.events
 
 import com.paulienvanalst.rugbymatch.TeamTestData
+import com.paulienvanalst.rugbymatch.game.LineOut
+import com.paulienvanalst.rugbymatch.game.Scrum
 import com.paulienvanalst.rugbymatch.team.TeamName
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
