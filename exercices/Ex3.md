@@ -15,8 +15,9 @@ It should not be very different from what is known from Java.
 The only think you should know to integrate spring into a Kotlin application, is the `lateinit` modifier. Each property that is initialized through 
 dependency injection, should be marked with this modifier. `lateinit` kan only be used together with the `var` modifier. Properties annotated 
 The only thing is that classes in Spring are final. Spring does not really like that. Therefore the Kotlin class need to be `open`. 
-As a developer you have two choices: either make this explicit and declare the Spring annotated class as `open class Something` or use the `all-open maven plugin`.
-In this workshop we will choose the explicit option, as we like the concept of class to be final.
+As a developer you have two choices: either make this explicit and declare the Spring annotated class as `open class SomeSpringBean` 
+or use the `all-open maven plugin` which will do that work for you.
+In this workshop we will choose the explicit option.
 
 The only thing you should know to integrate spring into a Kotlin application, is the `lateinit` modifier. Each property that is initialized through 
 dependency injection, should be marked with this modifier. `lateinit` can only be used together with the `var` modifier. Properties annotated 
