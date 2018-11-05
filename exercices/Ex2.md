@@ -3,7 +3,7 @@ A rugby game has a lot of set pieces. Those are situations to restart a game. In
 
 ### a - Interfaces
 As a scrum and a line-out are both a set piece, let's start with implementing an interface in [SetPieces.kt](../src/main/kotlin/com/paulienvanalst/rugbymatch/game/SetPieces.kt).
-This interface will have two properties : `otherTeam` and `teamThrowingIn` both of type `Team` . And will have one function: `isValid()`
+This interface will have two properties : `attackingTeam` and `defendingTeam` both of type `Team` . And will have one function: `isValid()`
 
 In the same file, make two data classes `Scrum` and `LineOut` implementing the interface `SetPiece`. Make sure they override the properties of the interface
 
@@ -11,14 +11,11 @@ More information about interfaces can be found [here](https://kotlinlang.org/doc
 
 Tip: an interface can be implemented like this `class ClassName() : Interface`
 
-A LineOut is a bit different than a scrum, the throwing in team can choose the number of players participating in the line out. The other team has to follow.
-Check the `Team.kt` class, which now has an extra method
-
-Now implement the function `isValid()` for both classes:
-* a scrum is valid if each team has a scrum (use the function in `Team`) 
+Now implement the function isValid() for both classes:
+* a scrum is valid if each team has a scrum (Check the `Team.kt` class, which now has an extra method)
 * a line out is valid if each team has the same amount of players
 
-Run the tests for SetPieces.
+Run the tests for SetPieces. (Do not forget to remove the `@Disabled` annotation.
 
 
 ### b - Inheritance

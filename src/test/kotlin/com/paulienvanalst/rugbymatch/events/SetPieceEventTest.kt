@@ -1,5 +1,13 @@
 package com.paulienvanalst.rugbymatch.events
 
+import com.paulienvanalst.rugbymatch.TeamTestData
+import com.paulienvanalst.rugbymatch.team.TeamName
+import org.hamcrest.CoreMatchers.`is`
+import org.hamcrest.MatcherAssert.assertThat
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
+
+@DisplayName("Ex 2 b and c: inheritance and extension functions")
 class SetPieceEventTest {
 //    @Test
 //    fun `we can retrieve the set piece events won and lost`() {
