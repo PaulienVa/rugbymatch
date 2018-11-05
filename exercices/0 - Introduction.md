@@ -31,6 +31,3 @@ Enjoy, learn and embrace Kotlin!
 | `git stash save {nameOfYourSave}` | Stash your changes and give your save a name |
 | `git stash pop {nameOfYourSave}`  | Bring back your changes earlier saved |
 | `git commit -m {commitMessage}`   | Commit your code (since you are working on your own fork)|
-
-### Interesting literature: 
-- Kotlin Collections versus Java Streams : https://www.baeldung.com/java-8-stream-vs-kotlin
