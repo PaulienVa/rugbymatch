@@ -5,9 +5,6 @@ We only need a scoring board to finish our analysis app.
 
 Hint: to help you with this, we already implemented `Score` and `GameScore`. You might want to have a look at it.ª
 
-Most of the exercises can be verified using Spring integration tests, but if you want to test it using some interface, 
-that is also possible. You only need to do an `ng serve` in the `analytics-app` directory to run the app on `localhost:4200`. 
-
 ### Kotlin and Spring boot 2
 Check the [application file](./../src/main/kotlin/com/paulienvanalst/rugbymatch/Application.kt) where the Spring boot 2  is set up.
 It should not be very different from what is known from Java.
