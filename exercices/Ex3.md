@@ -3,8 +3,7 @@
 We have a team, we have players and we can model set pieces! 
 We only need a scoring board to finish our analysis app.
 
-Most of the exercises can be verified using Spring integration tests, but if you want to test it using some interface, 
-that is also possible. You only need to do an `ng serve` in the `analytics-app` directory to run the app on `localhost:4200`. 
+Hint: to help you with this, we already implemented `Score` and `GameScore`. You might want to have a look at it.ª
 
 ### Kotlin and Spring boot 2
 Check the [application file](./../src/main/kotlin/com/paulienvanalst/rugbymatch/Application.kt) where the Spring boot 2  is set up.
@@ -12,6 +11,13 @@ It should not be very different from what is known from Java.
 
 The only think you should know to integrate spring into a Kotlin application, is the `lateinit` modifier. Each property that is initialized through 
 dependency injection, should be marked with this modifier. `lateinit` kan only be used together with the `var` modifier. Properties annotated 
+The only thing is that classes in Spring are final. Spring does not really like that. Therefore the Kotlin class need to be `open`. 
+As a developer you have two choices: either make this explicit and declare the Spring annotated class as `open class SomeSpringBean` 
+or use the `all-open maven plugin` which will do that work for you.
+In this workshop we will choose the explicit option.
+
+The only thing you should know to integrate spring into a Kotlin application, is the `lateinit` modifier. Each property that is initialized through 
+dependency injection, should be marked with this modifier. `lateinit` can only be used together with the `var` modifier. Properties annotated 
 with those modifiers are not allowed to have custom getters and setters.
 
 ### a - Scoring board
