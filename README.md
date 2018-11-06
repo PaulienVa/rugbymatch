@@ -1,4 +1,4 @@
-## Welcome this Kotlin workshop
+## Welcome to Kotlin!
 
 This workshops consists out of three exercises. Each of them can be done independent from each other and cover different learning goals.
 To make sure the exercises can be done independently from one another, the exercises can be found on the branch with the corresponding name.
