@@ -9,16 +9,16 @@ Hint: to help you with this, we already implemented `Score` and `GameScore`. You
 Check the [application file](./../src/main/kotlin/com/paulienvanalst/rugbymatch/Application.kt) where the Spring boot 2  is set up.
 It should not be very different from what is known from Java.
 
-The only think you should know to integrate spring into a Kotlin application, is the `lateinit` modifier. Each property that is initialized through 
-dependency injection, should be marked with this modifier. `lateinit` kan only be used together with the `var` modifier. Properties annotated 
 The only thing is that classes in Spring are final. Spring does not really like that. Therefore the Kotlin class need to be `open`. 
 As a developer you have two choices: either make this explicit and declare the Spring annotated class as `open class SomeSpringBean` 
 or use the `all-open maven plugin` which will do that work for you.
 In this workshop we will choose the explicit option.
 
-The only thing you should know to integrate spring into a Kotlin application, is the `lateinit` modifier. Each property that is initialized through 
-dependency injection, should be marked with this modifier. `lateinit` can only be used together with the `var` modifier. Properties annotated 
-with those modifiers are not allowed to have custom getters and setters.
+Then there are two ways to inject your dependencies into your Spring beans. Either by field injection or by constructor injection.
+Using the latter, you have nothing to do but add your dependencies into the constructor.
+To inject your dependencies on fields it gets a but more difficult. You need to know about the `lateinit` modifier. Each field that is initialized through 
+dependency injection, should be marked with this modifier. `lateinit` kan only be used together with the `var` modifier.
+Properties annotated with those modifiers are not allowed to have custom getters and setters.
 
 ### a - Scoring board
 In the file [ScoringBoard.kt](./../src/main/kotlin/com/paulienvanalst/rugbymatch/game/ScoringBoard.kt), we will make a class called `ScoringBoard` which is a Spring component.
