@@ -19,13 +19,11 @@ open class GameController {
     private lateinit var publisher : ApplicationEventPublisher
 
     @GetMapping("/")
-    @CrossOrigin(origins = ["http://localhost:4200"])
     fun home(): String {
         return "Welcome to this awesome workshop!"
     }
 
     @GetMapping("/start-game")
-    @CrossOrigin(origins = ["http://localhost:4200"])
     fun start(): Response {
         logger.info("Publishing event!")
         return try {
@@ -37,7 +35,6 @@ open class GameController {
     }
 
     @GetMapping("/try")
-    @CrossOrigin(origins = ["http://localhost:4200"])
     fun tryToulon(): String {
         logger.info("Publishing try event!")
 
@@ -50,7 +47,6 @@ open class GameController {
     }
 
     @GetMapping("/end-game")
-    @CrossOrigin(origins = ["http://localhost:4200"])
     fun end(): Response {
         logger.info("Publishing event!")
         return try {
