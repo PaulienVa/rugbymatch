@@ -11,11 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-open class GameController {
+open class GameController(val publisher : ApplicationEventPublisher) {
     private val logger = LogManager.getLogger(GameController::class.java)
-
-    @Autowired
-    private lateinit var publisher : ApplicationEventPublisher
 
     @GetMapping("/")
     fun home(): String {

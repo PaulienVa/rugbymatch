@@ -14,11 +14,8 @@ import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
 
 @Component
-open class GameReporter {
+open class GameReporter (val scoringBoard: ScoringBoard) {
     private val LOG = LogManager.getLogger(GameReporter::class.java)
-
-    @Autowired
-    private lateinit var scoringBoard: ScoringBoard
 
     private lateinit var gameReport : GameReport
 
