@@ -4,7 +4,7 @@ data class Team (val players: List<Player>, val name: TeamName) {
 
     val hasEnoughPlayers : Boolean  = players.count() >= 15
 
-    val hasEnoughStartingPlayers : Boolean = players.filter { it.isStarting }.count() >= 15
+    val hasEnoughStartingPlayers : Boolean = players.count { it.isStarting } >= 15
 
     val hasAnySubstitutes : Boolean = players.any { !it.isStarting }
 
