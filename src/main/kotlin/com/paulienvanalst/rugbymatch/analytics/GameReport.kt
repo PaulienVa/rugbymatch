@@ -8,7 +8,6 @@ import com.paulienvanalst.rugbymatch.game.Scrum
 import com.paulienvanalst.rugbymatch.team.NotImplementedException
 import com.paulienvanalst.rugbymatch.team.TeamName
 import org.apache.logging.log4j.LogManager
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationEvent
 import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Component
@@ -17,7 +16,7 @@ import org.springframework.stereotype.Component
 open class GameReporter (val scoringBoard: ScoringBoard) {
     private val LOG = LogManager.getLogger(GameReporter::class.java)
 
-    private lateinit var gameReport : GameReport
+    lateinit var gameReport : GameReport
 
     @EventListener
     fun startTheReport(startGame: StartGame) {
