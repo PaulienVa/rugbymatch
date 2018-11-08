@@ -16,7 +16,7 @@ data class Scrum(override val attackingTeam: Team, override val defendingTeam: T
      * A scrum is valid when both teams participating have a scrum
      */
     override fun isValid(): Boolean {
-        throw NotImplementedException()
+        return attackingTeam.hasEnoughScrumPlayersInPlay() and defendingTeam.hasEnoughScrumPlayersInPlay()
     }
 }
 
