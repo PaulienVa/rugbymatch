@@ -4,7 +4,6 @@ import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.not
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.jupiter.api.Assertions.assertThrows
-import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -20,6 +19,12 @@ class TeamTest {
                 Player(Position.CENTER, 14) +
                 Player(Position.WING, 15)
 
+        private val missingOnePlayerPerPosition = Position.values().map { Player(it, it.ordinal + 2) } +
+                Player(Position.LOCK, 13) +
+                Player(Position.FLANKER, 14) +
+                Player(Position.CENTER, 15) +
+                Player(Position.WING, 16)
+
 
         @Test
         fun ` with 14 players has not enough players` () {
@@ -28,8 +33,14 @@ class TeamTest {
         }
 
         @Test
-        fun `with 15 players has enough players` () {
+        fun `with 15 players has enough players to form a team` () {
             assertThat(Team(onePlayerPerPosition, TeamName.RC_TOULON).hasEnoughPlayers, `is`(true))
+        }
+
+        @Test
+        fun `with 14 starting players and one not starting player has enough players to play the game` () {
+            assertThat(Team(onePlayerPerPosition, TeamName.RC_TOULON).hasEnoughPlayers, `is`(true))
+            assertThat(Team(missingOnePlayerPerPosition, TeamName.RC_TOULON).hasEnoughStartingPlayers, `is`(false))
         }
 
         @Test
