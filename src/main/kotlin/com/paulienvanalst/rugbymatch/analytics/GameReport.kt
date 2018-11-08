@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component
 open class GameReporter(val scoringBoard: ScoringBoard) {
     private val LOG = LogManager.getLogger(GameReporter::class.java)
 
-    private lateinit var gameReport : GameReport
+    lateinit var gameReport : GameReport
 
     @EventListener
     fun startTheReport(startGame: StartGame) {

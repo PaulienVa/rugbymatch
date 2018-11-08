@@ -1,12 +1,10 @@
 package com.paulienvanalst.rugbymatch.game
 
 import com.paulienvanalst.rugbymatch.Application
+import com.paulienvanalst.rugbymatch.TeamTestData
 import com.paulienvanalst.rugbymatch.analytics.GameReporter
 import com.paulienvanalst.rugbymatch.analytics.MailingService
-import com.paulienvanalst.rugbymatch.events.FinishGame
-import com.paulienvanalst.rugbymatch.events.HalfTime
-import com.paulienvanalst.rugbymatch.events.ScoringEvent
-import com.paulienvanalst.rugbymatch.events.StartGame
+import com.paulienvanalst.rugbymatch.events.*
 import com.paulienvanalst.rugbymatch.team.TeamName
 import org.hamcrest.CoreMatchers.*
 import org.hamcrest.MatcherAssert.assertThat
@@ -49,6 +47,20 @@ class EventFlowTest {
     }
 
     @Test
+    fun `when a scrum is happening a scrum is reported` () {
+        eventPublisher.publishEvent(ScrumWasPlayed(this, Scrum(toulon, wasps), TeamName.RC_TOULON))
+
+        assertThat(gameReporter.gameReport.format(), containsString("We got 1 scrums"));
+    }
+
+    @Test
+    fun `when a lineout is happening a lineout is reported` () {
+        eventPublisher.publishEvent(LineOutWasPlayed(this, LineOut(toulon, wasps), TeamName.RC_TOULON))
+
+        assertThat(gameReporter.gameReport.format(), containsString("We got 1 line outs"));
+    }
+
+    @Test
     fun `when a try is scored the scoring board is updated` () {
         eventPublisher.publishEvent(ScoringEvent(this, Type.TRY, TeamName.RC_TOULON))
 
@@ -74,4 +86,8 @@ class EventFlowTest {
     fun `clear scoring board` () {
         scoringBoard.clear()
     }
+
+
+    private val toulon = TeamTestData().validTeam(TeamName.RC_TOULON)
+    private val wasps = TeamTestData().validTeam(TeamName.WASPS)
 }
