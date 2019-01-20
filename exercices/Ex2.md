@@ -37,7 +37,7 @@ Note a class is by default `final`, so you need to do something to make this hap
 
 
 ### c - Extension functions
-In the near feature we want to know which set pieces where won by which team. As this statistic is a property of `List<SetPieceEvent>` we will use extenstion functions to implement this.
+In the near feature we want to know which set pieces where won by which team. As this statistic is a property of `List<SetPieceEvent>` we will use extention functions to implement this.
 Extension functions can be implemented like this:
 ```kotlin
 List<SetPieceEvent>.name() : ReturnType = this.something
