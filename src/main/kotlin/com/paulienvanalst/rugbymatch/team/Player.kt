@@ -1,7 +1,7 @@
 package com.paulienvanalst.rugbymatch.team
 
 
-class Player(val position: Position, val bakcNumber: Int) {
+class Player(val position: Position, val backNumber: Int) {
 //todo to implement
 
 }
