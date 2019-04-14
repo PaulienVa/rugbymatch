@@ -56,7 +56,7 @@ Note that:
 Team has to be compliant to the following conditions:
  - _A team has enough players:_ Write a member `hasEnoughPlayers` that verifies that the team has more than 15 players.
  - _A team has enough starting players:_ Write a member `hasEnoughStartingPlayers` that verifies that the team has more than 15 starting players.
- - _A team has any subsitutes_: Write a member `hasAnySubstitutes` that verifies that the team has at least one substitute using `.any{}`.
+ - _A team has any substitutes_: Write a member `hasAnySubstitutes` that verifies that the team has at least one substitute using `.any{}`.
 
 
 Make sure the tests in the `ValidatingTeamTest` suite of `TeamTest` are properly running (do not forget to remove the `@Disabled` annotation).
