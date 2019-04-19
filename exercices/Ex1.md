@@ -16,7 +16,7 @@ The player class is just a simple PoJo for now : a part fro the `isStarting` fun
 In Kotlin we can call that a data class. A data class will implicitly have getters for the members as they are public by default. It wil also have a `toString()`, `hashCode()`, and `equals()` method. 
 Additionally, as we embrace immutability, a data class will also have a `copy()` method.
 
-Add the keyword `data` before `class` and remove all the overriden functions. But leave the `isStarting` function.
+Add the keyword `data` before `class` and remove all the overridden functions. But leave the `isStarting` function.
 
 **Congratulations! You just needed two lines to create a proper class**
 
