@@ -1,6 +1,6 @@
 To be able to run this workshop, one needs the following installed:
 
-### Mac
+# Mac
 _IDE:_
 
 preferably IntelliJ (Community Edition is fine) [download link](https://www.jetbrains.com/idea/download/#section=mac) 
@@ -9,8 +9,6 @@ _Git:_
 
 Follow the guide [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-
-
 _Java:_
 
 Any version equal or above java 8 is fine:
@@ -18,14 +16,13 @@ Any version equal or above java 8 is fine:
 brew cask install java
 ```
 
-
 _Maven:_
 
 See [here](https://www.baeldung.com/install-maven-on-windows-linux-mac)
 
 
 
-### Linux
+# Linux
 _IDE:_
 
 preferably IntelliJ (Community Edition is fine) [download link](https://www.jetbrains.com/idea/download/#section=linux) 
@@ -44,7 +41,7 @@ _Maven:_
 
 See [here](https://www.baeldung.com/install-maven-on-windows-linux-mac)
 
-### Windows
+# Windows
 _IDE:_
 
 preferably IntelliJ (Community Edition is fine) [download link](https://www.jetbrains.com/idea/download/#section=windows) 
