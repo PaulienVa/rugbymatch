@@ -1,16 +1,16 @@
 ## Welcome to Kotlin!
 
-This workshop consists out of three exercises. Each of them can be done independent from each other and cover different learning goals.
+This workshop consists of three exercises. Each of them can be done independent from each other and covers different learning goals.
 To make sure the exercises can be done independently from one another, the exercises can be found on the branch with the corresponding name.
 Those are listened in the table at the end of this introduction.
 
-The project you are going to build is rugby statistic system but you do not need any knowledge whatsoever. You will learn in through the documentation and the tests.
+The project you are going to build is a rugby statistic system but you do not need any knowledge whatsoever. You will learn it through the documentation and the tests.
 
 The project uses `Maven`. Often Kotlin is used together with gradle project. This workshop won't take one side or another. 
 Since a lot of examples are already covered with `gradle`, it is also interesting to see how to make it work with Maven ;)
 
-The project is set-up with on _java_ directory for the single java class it will ever have and one _kotlin_ directory for the future developments.
-During this workshop, you will have to fix the code to make the test pass. Sometimes the code was already set up yo at least compile. But some changes have to be made to make them pass.
+The project is set-up with one _java_ directory for the single java class it will ever have and one _kotlin_ directory for the future developments.
+During this workshop, you will have to fix the code to make the test pass. Sometimes the code was already set up to at least compile. But some changes have to be made to make them pass.
 
 
 Enjoy, learn and embrace Kotlin!
