@@ -9,8 +9,10 @@ Hint: to help you with this, we already implemented `Score` and `GameScore`. You
 Check the [application file](./../src/main/kotlin/com/paulienvanalst/rugbymatch/Application.kt) where the Spring boot 2  is set up.
 It should not be very different from what is known from Java.
 
-The only think you should know to integrate spring into a Kotlin application, is the `lateinit` modifier. Each property that is initialized through 
-dependency injection, should be marked with this modifier. `lateinit` kan only be used together with the `var` modifier. Properties annotated 
+For Spring DI work you need to whether mark injected fields with `lateinit var` (`lateinit` propety could be only `var`, not `val`) or make them `var` with nullable type, and asign to null (e.g. `var someClass: SomeClass? = null`) the former is preffered as allows to keep declaration non-nullable and safely make calls on variable without null-checks (safe calls `?.`).
+However, field injection is never recomended and proper way to use DI is to use constructor injection.
+
+Properties annotated 
 The only thing is that classes in Spring are final. Spring does not really like that. Therefore the Kotlin class need to be `open`. 
 As a developer you have two choices: either make this explicit and declare the Spring annotated class as `open class SomeSpringBean` 
 or use the `all-open maven plugin` which will do that work for you.
