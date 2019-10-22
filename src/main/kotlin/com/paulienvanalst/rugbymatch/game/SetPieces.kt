@@ -9,10 +9,9 @@ interface SetPiece {
     fun isValid(): Boolean
 }
 
-data class Scrum(override val attackingTeam: Team, override val defendingTeam: Team) : SetPiece {
-    override fun isValid() : Boolean{
-        return attackingTeam.hasEnoughScrumPlayersInPlay() and defendingTeam.hasEnoughScrumPlayersInPlay()
-    }
+data class Scrum(override val attackingTeam: Team, override val defendingTeam: Team)
+    : SetPiece {
+    override fun isValid() = attackingTeam.hasEnoughScrumPlayersInPlay() and defendingTeam.hasEnoughScrumPlayersInPlay()
 }
 
 data class LineOut(override val attackingTeam: Team, override val defendingTeam: Team) : SetPiece {
