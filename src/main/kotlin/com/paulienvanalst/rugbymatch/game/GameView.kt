@@ -4,16 +4,14 @@ import com.paulienvanalst.rugbymatch.events.FinishGame
 import com.paulienvanalst.rugbymatch.events.ScoringEvent
 import com.paulienvanalst.rugbymatch.events.StartGame
 import com.paulienvanalst.rugbymatch.team.TeamName
-import org.apache.logging.log4j.LogManager
-import org.springframework.beans.factory.annotation.Autowired
+import mu.KotlinLogging
 import org.springframework.context.ApplicationEventPublisher
-import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-open class GameController(val publisher : ApplicationEventPublisher){
-    private val logger = LogManager.getLogger(GameController::class.java)
+open class GameController(val publisher : ApplicationEventPublisher) {
+    private val logger = KotlinLogging.logger {  }
 
     @GetMapping("/")
     fun home(): String {

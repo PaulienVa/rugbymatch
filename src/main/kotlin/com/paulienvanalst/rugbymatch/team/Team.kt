@@ -1,6 +1,6 @@
 package com.paulienvanalst.rugbymatch.team
 
-data class Team (val players: List<Player>, val name: TeamName) {
+data class Team (var players: List<Player>, var name: TeamName) {
 
     val hasEnoughPlayers : Boolean  = players.count() >= 15
 

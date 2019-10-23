@@ -10,7 +10,7 @@ data class GameScore(val hostingTeamScore: Pair<TeamName, Int>, val visitingTeam
 
 private fun List<Score>.getTotalScoreOf(teamName: TeamName) : Int = this.filter { it.forTeam == teamName }.map { it.type.points }.sum()
 
-fun List<Score>.getGameScore(hostingTeam: TeamName, visitingTeam : TeamName) : GameScore =  GameScore(
+fun List<Score>.getGameScore(hostingTeam: TeamName, visitingTeam : TeamName) : GameScore =  GameScore (
         hostingTeam to this.getTotalScoreOf(hostingTeam),
         visitingTeam to this.getTotalScoreOf(visitingTeam)
 )

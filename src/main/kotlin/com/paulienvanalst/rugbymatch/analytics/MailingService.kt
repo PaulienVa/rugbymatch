@@ -12,8 +12,6 @@ open class MailingService {
     fun generateReport(generateGameReport: GenerateGameReport) {
         mailToSend = generateGameReport.report.format()
     }
-
-
 }
 
 
