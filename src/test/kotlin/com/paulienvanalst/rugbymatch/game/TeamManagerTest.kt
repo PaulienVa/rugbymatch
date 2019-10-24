@@ -6,18 +6,18 @@ import com.paulienvanalst.rugbymatch.team.Player
 import com.paulienvanalst.rugbymatch.team.Position
 import com.paulienvanalst.rugbymatch.team.TeamName.RC_TOULON
 import com.paulienvanalst.rugbymatch.team.TeamName.WASPS
+import io.mockk.mockkClass
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
-import org.mockito.Mockito.mock
 import org.springframework.context.ApplicationEventPublisher
 import java.time.LocalDate
 
 class TeamManagerTest {
 
-    private val substitutionRepository = mock(SubstitutionRepository::class.java)
-    private val applicationEventPublisher = mock(ApplicationEventPublisher::class.java)
+    private var applicationEventPublisher = mockkClass(ApplicationEventPublisher::class)
+    private var substitutionRepository = mockkClass(SubstitutionRepository::class)
 
     private val teamManager = TeamManager(applicationEventPublisher, substitutionRepository)
 
