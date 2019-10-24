@@ -1,4 +1,4 @@
-## 4. *Let*'s *apply* enhance the code now *with* some scope functions and *also* let the players *run*
+## 4. *Let*'s *apply* some learnings and enhance the code now *with* some scope functions. (*also* let the players *run*)
 
 Kotlin knows the scope functions, coming from Java those will seem a bit odd and even be very difficult to understand.
 But in a bit you might find them very useful! 
