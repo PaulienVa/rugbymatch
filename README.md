@@ -28,9 +28,16 @@ For bash systems:
 ./mvnw.cmd clean install
 ```
 
-To run a spring boot service:
+To run a spring boot service (**will only be used for exercise 3**):
+
+For unix systems:
 ```commandline
 ./mvnw spring-boot:run
+```
+
+For bash systems:
+```commandline
+./mvnw.cmd spring-boot:run
 ```
 
 ### Workshop set up 
@@ -40,6 +47,7 @@ To run a spring boot service:
 | 1 | `Ex1` | `data class` `collections` `types` |
 | 2 | `Ex2` |`inheritance` `interfaces` `extension functions` |
 | 3 | `Ex3` |`Integration with Spring` |
+| 4 | `Ex4` | `Scoping functions` |
 
 ### Some useful `git` commands
 | Command | Description |
