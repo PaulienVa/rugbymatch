@@ -47,7 +47,6 @@ For bash systems:
 | 1 | `Ex1` | `data class` `collections` `types` |
 | 2 | `Ex2` |`inheritance` `interfaces` `extension functions` |
 | 3 | `Ex3` |`Integration with Spring` |
-| 4 | `Ex4` | `Scoping functions` |
 
 ### Some useful `git` commands
 | Command | Description |
