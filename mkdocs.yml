@@ -1,0 +1,25 @@
+site_name: RugbymatchWorkshop
+theme:
+  name: material
+  language: nl
+  favicon: images/favicon.png
+  logo: images/favicon.png
+  palette:
+    primary: black
+    accent: white
+markdown_extensions:
+  - markdown_include_lines.main
+  - codehilite
+  - markdown_include.include
+  - footnotes
+plugins:
+  - search
+  - markdownextradata: {}
+nav:
+  - Home: index.md
+  - Exercises:
+      - Exercise 1: ./exercices/Ex1.md
+      - Exercise 2: ./exercices/Ex2.md
+      - Exercise 3: ./exercices/Ex3.md
+extra:
+  rugbymatch_root: .
